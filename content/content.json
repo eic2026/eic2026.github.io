@@ -17,7 +17,7 @@
   },
   "hero": {
     "kicker": "Industrial insulation & engineering materials",
-    "title": "Premium industrial insulation.",
+    "title": "Premium industrial insulation",
     "titleAccent": "Maximum efficiency.",
     "text": "High-performance insulation materials and industrial products for piping, HVAC, refrigeration, equipment and industrial applications.",
     "slides": [
@@ -49,14 +49,14 @@
     ]
   },
   "featuredSlugs": [
-    "puf-pipe-sections",
     "pir-pipe-sections",
     "rockwool-pipe-sections",
     "nbr-epdm-rubber-insulation",
     "xlpe-insulation",
     "aluminium-cladding-sheets",
     "aerogel-insulation",
-    "insulation-fasteners-pins"
+    "insulation-fasteners-pins",
+    "puf-pipe-sections"
   ],
   "products": [
     {
@@ -67,19 +67,19 @@
       "category": "thermal-insulation",
       "form": "pipe-section",
       "material": "Polyurethane foam (PUF)",
-      "shortDescription": "Pre-formed rigid polyurethane foam sections for chilled, hot water and process piping.",
+      "shortDescription": "Pre-formed rigid polyurethane foam sections for chilled, hot water and process piping",
       "description": "PUF pipe sections are pre-formed rigid polyurethane foam insulation supplied in half-shell or full-round form to fit standard pipe sizes. The closed-cell structure of polyurethane foam makes these sections a common choice for chilled water, hot water and process piping where controlling heat gain, heat loss and surface condensation matters. Sections are fitted around the pipe, secured, and typically finished with a vapour barrier and cladding.",
       "applications": [
         "Chilled water piping",
         "Hot water piping",
         "Process piping"
       ],
-      "applicationSummary": "Chilled/hot water and process piping",
+      "applicationSummary": "Chilled/hot water and process piping.",
       "applicationTags": [
+        "hvac",
         "chilled-water",
         "hot-water",
         "process-piping",
-        "hvac",
         "industrial"
       ],
       "features": [
@@ -104,7 +104,8 @@
         "pipe insulation",
         "preformed",
         "half shell"
-      ]
+      ],
+      "active": true
     },
     {
       "id": 2,
