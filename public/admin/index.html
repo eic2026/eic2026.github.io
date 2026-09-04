@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>EIC Admin</title>
+<link rel="icon" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap">
+<style>
+:root{--black:#1A1A1A;--gold:#D4AF37;--gold-dark:#B8962E;--ivory:#FBF6E6;--border:#E5E5E5;--text-2:#666;--red:#b42318;--green:#1f8f4e}
+*{box-sizing:border-box}body{margin:0;font-family:Manrope,system-ui,sans-serif;font-size:15px;color:var(--black);background:#f4f4f2}
+button,input,select,textarea{font:inherit}a{color:inherit}
+h1,h2,h3{margin:0;line-height:1.15}h2{font-size:20px;text-transform:uppercase;letter-spacing:.03em}h3{font-size:15px}
+.hidden{display:none!important}
+/* login */
+.login{min-height:100vh;display:grid;place-items:center;background:var(--black);padding:20px}
+.login form{background:#fff;padding:36px;width:100%;max-width:400px;border-top:5px solid var(--gold);border-radius:2px}
+.login img{height:70px;margin-bottom:18px}
+/* shell */
+.shell{display:grid;grid-template-columns:230px 1fr;min-height:100vh}
+.side{background:var(--black);color:#fff;padding:20px 16px;position:sticky;top:0;height:100vh}
+.side img{height:64px;background:#fff;padding:6px;border-radius:2px;display:block;margin-bottom:24px}
+.side nav a{display:block;padding:11px 12px;border-radius:2px;font-weight:700;color:rgba(255,255,255,.75);cursor:pointer;text-decoration:none}
+.side nav a.active{background:#2a2a2a;color:var(--gold);border-left:3px solid var(--gold)}
+.side .foot{position:absolute;bottom:20px;left:16px;right:16px;font-size:12px;color:rgba(255,255,255,.55)}
+.main{padding:28px 32px 80px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px;flex-wrap:wrap}
+.top p{margin:4px 0 0;color:var(--text-2);font-size:14px}
+/* controls */
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:42px;padding:0 18px;font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase;border:2px solid var(--black);background:var(--black);color:#fff;border-radius:2px;cursor:pointer}
+.btn:disabled{opacity:.5;cursor:default}
+.btn--gold{background:var(--gold);border-color:var(--gold);color:var(--black)}.btn--gold:hover{background:var(--gold-dark);border-color:var(--gold-dark)}
+.btn--ghost{background:#fff;color:var(--black);border-color:var(--border)}.btn--ghost:hover{border-color:var(--gold)}
+.btn--danger{background:#fff;color:var(--red);border-color:var(--border)}
+.btn--sm{min-height:34px;padding:0 12px;font-size:12px}
+.field{display:grid;gap:5px;margin-bottom:14px}.field label{font-size:13px;font-weight:700}.field small{color:var(--text-2);font-size:12px}
+.field input,.field select,.field textarea{width:100%;min-height:42px;padding:8px 12px;border:1px solid #cfcfcf;border-radius:2px;background:#fff}
+.field textarea{min-height:90px;resize:vertical}.field input:focus,.field textarea:focus,.field select:focus{outline:0;border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,.25)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}.row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0 16px}
+.card{background:#fff;border:1px solid var(--border);border-radius:2px;padding:22px;margin-bottom:18px}
+.card h3{text-transform:uppercase;letter-spacing:.06em;font-size:13px;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--gold);display:inline-block}
+.chips{display:flex;flex-wrap:wrap;gap:6px}.chips label{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid var(--border);border-radius:2px;font-size:13px;cursor:pointer;background:#fff}.chips input{accent-color:var(--gold);width:16px;height:16px;min-height:0;padding:0;margin:0}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:14px}th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:middle}th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--text-2);background:var(--ivory)}
+tr:hover td{background:#fbfaf6}td img{width:64px;height:44px;object-fit:cover;border:1px solid var(--border)}
+.status{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.06em;padding:3px 8px;border-radius:2px;background:var(--ivory)}
+.toast{position:fixed;right:20px;bottom:20px;background:var(--black);color:#fff;padding:14px 18px;border-left:4px solid var(--gold);border-radius:2px;max-width:420px;font-size:14px;z-index:9;display:none}.toast.err{border-color:var(--red)}
+.savebar{position:sticky;bottom:0;background:#fff;border-top:1px solid var(--border);padding:12px 32px;margin:0 -32px -80px;display:flex;gap:12px;align-items:center;justify-content:flex-end}
+.savebar .dirty{margin-right:auto;font-size:13px;color:var(--text-2)}
+.spec-row{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;margin-bottom:8px}.spec-row input{min-height:38px;padding:6px 10px;border:1px solid #cfcfcf;border-radius:2px}
+.slide-row{display:grid;grid-template-columns:2fr 1.2fr 2fr auto auto;gap:8px;align-items:center;margin-bottom:8px}.slide-row select,.slide-row input{min-height:38px;padding:6px 10px;border:1px solid #cfcfcf;border-radius:2px;width:100%}
+.preview{aspect-ratio:16/11;border:1px solid var(--border);background:#fff;display:grid;place-items:center;overflow:hidden}.preview img{width:100%;height:100%;object-fit:cover}
+.notice{padding:12px 14px;background:var(--ivory);border-left:4px solid var(--gold);font-size:13px;margin-bottom:16px}
+@media(max-width:900px){.shell{grid-template-columns:1fr}.side{position:static;height:auto}.side .foot{position:static;margin-top:16px}.main{padding:20px 16px 80px}.row,.row-3{grid-template-columns:1fr}.savebar{padding:12px 16px;margin:0 -16px -80px}.slide-row{grid-template-columns:1fr 1fr}}
+.pv{font-size:12px}.pv__img{aspect-ratio:16/11;border:1px solid var(--border);overflow:hidden;margin-bottom:10px}.pv__img img{width:100%;height:100%;object-fit:cover}
+.pv__code{color:var(--gold-dark);font-weight:800;letter-spacing:.1em;font-size:10px}.pv__name{font-size:18px;font-weight:800;line-height:1.15;margin:3px 0}.pv__short{color:var(--text-2);margin-bottom:8px}
+.pv__facts{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);margin-bottom:8px}.pv__facts>div{padding:6px 8px}.pv__facts>div:first-child{border-right:1px solid var(--border)}
+.pv small{display:block;font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-2)}.pv__facts b{font-size:11.5px}
+.pv__lists{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}.pv__lists small{border-bottom:2px solid var(--gold);display:inline-block;margin-bottom:4px}.pv ul{margin:0;padding:0;list-style:none}.pv li{padding-left:12px;position:relative;line-height:1.35}.pv li::before{content:'';position:absolute;left:0;top:5px;width:6px;height:6px;background:var(--gold);transform:rotate(45deg)}
+.pv__btns{display:grid;grid-template-columns:1fr 1fr;gap:4px}.pv__btns span{display:block;text-align:center;font-size:9px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:7px 4px;border-radius:2px}.b-gold{grid-column:1/-1;background:var(--gold)}.b-black{background:var(--black);color:#fff}.b-green{background:#25D366;color:#06341b}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="login" id="login">
+  <form id="login-form">
+    <img src="/assets/img/logo-horizontal.png" alt="EIC">
+    <h2 style="margin-bottom:6px">Admin login</h2>
+    <p style="color:var(--text-2);font-size:14px;margin:0 0 18px">Manage products, contact details and homepage slides.</p>
+    <div class="field" id="lu-wrap"><label for="lu">Username</label><input id="lu" autocomplete="username"></div>
+    <div class="field"><label for="lp" id="lp-label">Password</label><input id="lp" type="password" autocomplete="current-password" required><small id="lp-help" class="hidden">Paste your GitHub personal access token (starts with <code>github_pat_</code>). It stays on this device only.</small></div>
+    <label id="remember-wrap" class="hidden" style="display:flex;gap:8px;align-items:center;font-size:13px;margin-bottom:12px"><input type="checkbox" id="remember" style="accent-color:var(--gold)"> Remember on this device</label>
+    <p id="login-err" style="color:var(--red);font-size:13px;min-height:18px;margin:0 0 10px"></p>
+    <button class="btn btn--gold" type="submit" style="width:100%">Log in</button>
+  </form>
+</div>
+
+<!-- SHELL -->
+<div class="shell hidden" id="shell">
+  <aside class="side">
+    <img src="/assets/img/logo-horizontal.png" alt="EIC">
+    <nav>
+      <a data-view="products" class="active">Products</a>
+      <a data-view="hero">Homepage slides</a>
+      <a data-view="site">Contact & company</a>
+      <a data-view="leads">Leads</a>
+      <a href="/" target="_blank">View website ↗</a>
+      <a id="logout">Log out</a>
+    </nav>
+    <div class="foot">Changes are saved to the site repository and go live automatically after the rebuild (about a minute).</div>
+  </aside>
+
+  <main class="main">
+    <!-- PRODUCTS LIST -->
+    <section id="view-products">
+      <div class="top"><div><h2>Products</h2><p><span id="p-count"></span> products · click a row to edit</p></div><button class="btn btn--gold" id="p-add">+ Add product</button></div>
+      <table><thead><tr><th></th><th>Code</th><th>Name</th><th>Category</th><th>Form</th><th>Status</th><th></th></tr></thead><tbody id="p-rows"></tbody></table>
+    </section>
+
+    <!-- PRODUCT EDIT -->
+    <section id="view-edit" class="hidden">
+      <div class="top"><div><h2 id="e-title">Edit product</h2><p>Leave specifications empty unless EIC has supplied real values — the site then shows "Contact EIC for available specifications."</p></div><button class="btn btn--ghost" id="e-back">← Back to list</button></div>
+      <div class="row" style="grid-template-columns:2fr 1fr;gap:18px;align-items:start">
+        <div>
+          <div class="card"><h3>Basics</h3>
+            <div class="row-3">
+              <div class="field"><label>Code</label><input id="f-code" placeholder="EIC-21"></div>
+              <div class="field"><label>Name *</label><input id="f-name" required></div>
+              <div class="field"><label>URL slug *</label><input id="f-slug" pattern="[a-z0-9-]+"><small>/products/<span id="f-slug-preview"></span>/</small></div>
+            </div>
+            <div class="row-3">
+              <div class="field"><label>Category</label><select id="f-category"></select></div>
+              <div class="field"><label>Product form</label><select id="f-form"></select></div>
+              <div class="field"><label>Material</label><input id="f-material" placeholder="e.g. Rockwool (mineral wool)"></div>
+            </div>
+            <div class="field"><label>Short description *</label><input id="f-short" maxlength="160"><small>One sentence, shown on cards and in search results.</small></div>
+            <div class="field"><label>Product overview</label><textarea id="f-desc" rows="5"></textarea></div>
+          </div>
+          <div class="card"><h3>Applications & features</h3>
+            <div class="field"><label>Primary use (one line)</label><input id="f-appsum" placeholder="e.g. High-temperature pipes"></div>
+            <div class="row">
+              <div class="field"><label>Applications</label><textarea id="f-apps" rows="4"></textarea><small>One per line.</small></div>
+              <div class="field"><label>Key features</label><textarea id="f-features" rows="4"></textarea><small>One per line.</small></div>
+            </div>
+            <div class="field"><label>Application filters</label><div class="chips" id="f-tags"></div></div>
+          </div>
+          <div class="card"><h3>Specifications (only if supplied by EIC)</h3>
+            <div id="f-specs"></div><button class="btn btn--ghost btn--sm" type="button" id="f-spec-add">+ Add specification row</button>
+            <div class="field" style="margin-top:14px"><label>Available options</label><textarea id="f-options" rows="2"></textarea><small>One per line, e.g. "Available pipe sizes and thicknesses — Contact EIC for available specifications."</small></div>
+          </div>
+          <div class="card"><h3>Related products & search</h3>
+            <div class="field"><label>Related products</label><div class="chips" id="f-related"></div></div>
+            <div class="field"><label>Search keywords</label><input id="f-keywords"><small>Comma separated. Other names buyers use, e.g. "mineral wool, stone wool".</small></div>
+          </div>
+        </div>
+        <div>
+          <div class="card"><h3>Image</h3>
+            <div class="preview" id="f-preview"><span style="color:var(--text-2);font-size:13px">No image</span></div>
+            <div class="field" style="margin-top:12px"><label>Upload image</label><input type="file" id="f-file" accept=".webp,.jpg,.jpeg,.png"><small>White background, landscape (16:11), under 3 MB. Saved to the site on upload.</small></div>
+            <div class="field"><label>Image path</label><input id="f-image" placeholder="/assets/img/products/slug.webp"></div>
+          </div>
+          <div class="card"><h3>Visibility</h3>
+            <label style="display:flex;gap:10px;align-items:center;font-weight:600"><input type="checkbox" id="f-active" checked style="accent-color:var(--gold);width:18px;height:18px"> Show on website</label>
+            <label style="display:flex;gap:10px;align-items:center;font-weight:600;margin-top:10px"><input type="checkbox" id="f-featured" style="accent-color:var(--gold);width:18px;height:18px"> Featured on homepage</label>
+          </div>
+          <div class="card" id="pv-card"><h3>Website preview</h3>
+            <div class="pv">
+              <div class="pv__img"><img id="pv-img" src="" alt=""></div>
+              <span class="pv__code" id="pv-code"></span>
+              <div class="pv__name" id="pv-name"></div>
+              <div class="pv__short" id="pv-short"></div>
+              <div class="pv__facts"><div><small>Material</small><b id="pv-material"></b></div><div><small>Primary use</small><b id="pv-appsum"></b></div></div>
+              <div class="pv__lists"><div><small>Applications</small><ul id="pv-apps"></ul></div><div><small>Features</small><ul id="pv-features"></ul></div></div>
+              <div class="pv__btns"><span class="b-gold">Request a quote →</span><span class="b-black">Call now</span><span class="b-green">WhatsApp</span></div>
+            </div>
+          </div>
+          <button class="btn btn--gold" id="e-apply" style="width:100%">Apply changes</button>
+          <button class="btn btn--danger" id="e-delete" style="width:100%;margin-top:8px">Delete product</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- HERO -->
+    <section id="view-hero" class="hidden">
+      <div class="top"><div><h2>Homepage slides</h2><p>Hero text and the product carousel shown at the top of the homepage.</p></div></div>
+      <div class="card"><h3>Hero text</h3>
+        <div class="row"><div class="field"><label>Small line above heading</label><input id="h-kicker"></div><div class="field"><label>Heading</label><input id="h-title"></div></div>
+        <div class="row"><div class="field"><label>Heading (gold line)</label><input id="h-accent"></div><div class="field"><label>Supporting text</label><input id="h-text"></div></div>
+      </div>
+      <div class="card"><h3>Carousel slides</h3>
+        <div class="notice">Badges should describe supply honestly — e.g. "Available to order", "Supply on request", "Bulk enquiries welcome".</div>
+        <div id="h-slides"></div><button class="btn btn--ghost btn--sm" id="h-add">+ Add slide</button>
+      </div>
+    </section>
+
+    <!-- SITE -->
+    <section id="view-site" class="hidden">
+      <div class="top"><div><h2>Contact & company</h2><p>Used in the header, footer, CTAs, contact page, PDFs and structured data.</p></div></div>
+      <div class="card"><h3>Contact</h3>
+        <div class="row-3">
+          <div class="field"><label>Phone (10 digits)</label><input id="s-phone" inputmode="numeric" pattern="\d{10}"></div>
+          <div class="field"><label>WhatsApp number (10 digits)</label><input id="s-wa" inputmode="numeric"><small>Leave empty to use the phone number.</small></div>
+          <div class="field"><label>Email</label><input id="s-email" type="email"></div>
+        </div>
+        <div class="field"><label>Business address</label><textarea id="s-address" rows="2"></textarea><small>Shown on the contact page and footer only when filled in.</small></div>
+        <div class="field"><label>WhatsApp widget pre-filled message</label><input id="s-wamsg"></div>
+      </div>
+      <div class="card"><h3>Company</h3>
+        <div class="field"><label>Tagline</label><input id="s-tagline"></div>
+        <div class="row"><div class="field"><label>Footer credit — name</label><input id="s-dev"></div><div class="field"><label>Footer credit — link</label><input id="s-devurl" type="url"></div></div>
+      </div>
+    </section>
+
+    <!-- LEADS -->
+    <section id="view-leads" class="hidden">
+      <div class="top"><div><h2>Leads</h2><p>Enquiries submitted through the website.</p></div>
+        <div style="display:flex;gap:8px"><select id="l-status" style="min-height:42px;padding:0 10px;border:1px solid #cfcfcf;border-radius:2px"><option value="">All statuses</option></select><button class="btn btn--ghost" id="l-refresh">Refresh</button><button class="btn btn--ghost" id="l-export">Export CSV</button></div></div>
+      <div id="l-empty" class="notice hidden"></div>
+      <table><thead><tr><th>Date</th><th>Name / company</th><th>Contact</th><th>Product</th><th>Details</th><th>Status</th><th>Follow-up</th></tr></thead><tbody id="l-rows"></tbody></table>
+    </section>
+
+    <div class="savebar" id="savebar"><span class="dirty" id="dirty">No unsaved changes</span><button class="btn btn--ghost" id="discard">Discard</button><button class="btn btn--gold" id="save" disabled>Save & publish</button></div>
+  </main>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="/assets/js/config.js"></script>
+<script>
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const CFG=window.EIC_CONFIG||{}, GH_MODE=CFG.mode==='github', API=CFG.adminEndpoint||'/api/admin';
+const CONTENT_PATH='content/content.json';
+/* ---- GitHub-direct adapter (GitHub Pages mode: the browser talks to api.github.com with the user's token) ---- */
+const b64=s=>btoa(unescape(encodeURIComponent(s))), unb64=s=>decodeURIComponent(escape(atob(s.replace(/\n/g,''))));
+async function gh(path,init={}){const r=await fetch(`https://api.github.com/repos/${CFG.repo}/contents/${path}`,{...init,headers:{Authorization:'Bearer '+token,Accept:'application/vnd.github+json','Content-Type':'application/json',...(init.headers||{})}});if(!r.ok){if(r.status===401)throw Object.assign(new Error('GitHub rejected the token. Check it has Contents: Read and write on '+CFG.repo+'.'),{status:401});if(r.status===404)throw new Error('Repository or file not found: '+CFG.repo+'/'+path+'. Check "repo" in assets/js/config.js.');if(r.status===409)throw new Error('Someone else saved meanwhile. Reload and reapply your change.');throw new Error('GitHub error '+r.status+': '+(await r.text()).slice(0,160));}return r.json();}
+const ghApi={
+  async login({password}){token=password;const me=await fetch('https://api.github.com/user',{headers:{Authorization:'Bearer '+token}});if(!me.ok){token='';throw new Error('GitHub did not accept this token.');}await gh(CONTENT_PATH+'?ref='+(CFG.branch||'main'));return{token};},
+  async getContent(){const d=await gh(CONTENT_PATH+'?ref='+(CFG.branch||'main'));return{content:JSON.parse(unb64(d.content)),sha:d.sha};},
+  async saveContent({content,sha}){const c=content;if(c.site){c.site.phoneDisplay=String(c.site.phone||'').replace(/(\d{5})(\d{5})/,'$1 $2');c.site.phoneTel='+91'+c.site.phone;c.site.whatsapp='91'+(c.site.whatsappNumber||c.site.phone);}
+    const r=await gh(CONTENT_PATH,{method:'PUT',body:JSON.stringify({message:'content: update via admin',content:b64(JSON.stringify(c,null,2)),branch:CFG.branch||'main',sha})});return{sha:r.content.sha};},
+  async uploadImage({filename,base64}){const path='public/assets/img/products/'+filename;let sha;try{sha=(await gh(path+'?ref='+(CFG.branch||'main'))).sha;}catch(e){}await gh(path,{method:'PUT',body:JSON.stringify({message:'content: upload '+filename,content:base64,branch:CFG.branch||'main',sha})});return{path:'/assets/img/products/'+filename};},
+  async listLeads(){throw new Error('In GitHub Pages mode enquiries are emailed to EIC (Web3Forms) rather than stored here. Check the inbox for '+(CFG.notifyTo||'the site email')+'.');},
+  async updateLead(){throw new Error('Not available in GitHub Pages mode.');}
+};
+const STATUSES=['NEW','CONTACTED','FOLLOW_UP_REQUIRED','QUOTATION_SENT','NEGOTIATION','CONVERTED','LOST'];
+let token=sessionStorage.getItem('eic_admin_token')||'', content=null, sha=null, taxonomy=null, dirty=false, editing=null;
+
+async function api(action,args={}){
+  if(GH_MODE){try{return await ghApi[action](args);}catch(e){if(e.status===401&&action!=='login')logout();throw e;}}
+  const r=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json',...(token?{Authorization:'Bearer '+token}:{})},body:JSON.stringify({action,...args})});
+  const d=await r.json().catch(()=>({error:'Bad response'}));
+  if(!r.ok){ if(r.status===401&&action!=='login'){logout();} throw new Error(d.error||'Request failed'); }
+  return d;
+}
+function toast(msg,err=false){const t=$('#toast');t.textContent=msg;t.className='toast'+(err?' err':'');t.style.display='block';clearTimeout(t._t);t._t=setTimeout(()=>t.style.display='none',err?6000:3500);}
+function setDirty(v){dirty=v;$('#save').disabled=!v;$('#dirty').textContent=v?'Unsaved changes':'No unsaved changes';}
+window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue='';}});
+const lines=s=>s.split('\n').map(x=>x.trim()).filter(Boolean);
+const slugify=s=>s.toLowerCase().replace(/&/g,' and ').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ---- login ---- */
+if(GH_MODE){$('a[data-view=leads]').textContent='Leads (email inbox)';$('#lu-wrap').classList.add('hidden');$('#lp-label').textContent='GitHub access token';$('#lp-help').classList.remove('hidden');$('#remember-wrap').classList.remove('hidden');$('#lp').autocomplete='off';token=token||localStorage.getItem('eic_admin_token')||'';}
+$('#login-form').addEventListener('submit',async e=>{e.preventDefault();$('#login-err').textContent='';try{const d=await api('login',{user:$('#lu').value,password:$('#lp').value.trim()});token=d.token;sessionStorage.setItem('eic_admin_token',token);if(GH_MODE&&$('#remember').checked)localStorage.setItem('eic_admin_token',token);await boot();}catch(err){$('#login-err').textContent=err.message;}});
+function logout(){token='';sessionStorage.removeItem('eic_admin_token');localStorage.removeItem('eic_admin_token');$('#shell').classList.add('hidden');$('#login').classList.remove('hidden');}
+$('#logout').addEventListener('click',logout);
+
+async function boot(){
+  try{
+    taxonomy=await fetch('/admin/taxonomy.json').then(r=>r.json());
+    const d=await api('getContent');content=d.content;sha=d.sha;
+    $('#login').classList.add('hidden');$('#shell').classList.remove('hidden');
+    renderProducts();renderHero();renderSite();setDirty(false);
+  }catch(err){toast(err.message,true);if(!token)logout();}
+}
+
+/* ---- nav ---- */
+$$('.side nav a[data-view]').forEach(a=>a.addEventListener('click',()=>show(a.dataset.view)));
+function show(v){$$('.side nav a[data-view]').forEach(a=>a.classList.toggle('active',a.dataset.view===v));['products','edit','hero','site','leads'].forEach(x=>$('#view-'+x).classList.toggle('hidden',x!==v));if(v==='leads')loadLeads();window.scrollTo(0,0);}
+
+/* ---- products ---- */
+const catName=id=>(taxonomy.categories.find(c=>c.id===id)||{}).name||id, formName=id=>(taxonomy.forms.find(c=>c.id===id)||{}).name||id;
+const imgOf=p=>p.image||`/assets/img/products/${p.slug}.webp`;
+function renderProducts(){
+  $('#p-count').textContent=content.products.length;
+  $('#p-rows').innerHTML=content.products.map((p,i)=>`<tr data-i="${i}"><td><img src="${esc(imgOf(p))}" alt="" onerror="this.style.visibility='hidden'"></td><td style="color:var(--gold-dark);font-weight:800">${esc(p.code||'')}</td><td><strong>${esc(p.name)}</strong><br><small style="color:var(--text-2)">${esc(p.shortDescription||'')}</small></td><td>${esc(catName(p.category))}</td><td>${esc(formName(p.form))}</td><td><span class="status">${p.active===false?'HIDDEN':'LIVE'}</span>${(content.featuredSlugs||[]).includes(p.slug)?' <span class="status" style="background:var(--gold)">FEATURED</span>':''}</td><td><button class="btn btn--ghost btn--sm">Edit</button></td></tr>`).join('');
+  $$('#p-rows tr').forEach(tr=>tr.addEventListener('click',()=>openEdit(Number(tr.dataset.i))));
+}
+$('#p-add').addEventListener('click',()=>{const n=content.products.length+1;content.products.push({id:n,code:'EIC-'+String(n).padStart(2,'0'),name:'',slug:'',category:taxonomy.categories[0].id,form:taxonomy.forms[0].id,material:'',shortDescription:'',description:'',applications:[],applicationSummary:'',applicationTags:[],features:[],specifications:[],options:['Contact EIC for available specifications.'],relatedProducts:[],searchKeywords:[],active:true});openEdit(content.products.length-1,true);});
+
+function openEdit(i,isNew=false){
+  editing=i;const p=content.products[i];
+  $('#e-title').textContent=isNew?'Add product':'Edit: '+p.name;
+  $('#f-code').value=p.code||'';$('#f-name').value=p.name||'';$('#f-slug').value=p.slug||'';$('#f-slug-preview').textContent=p.slug||'';
+  $('#f-category').innerHTML=taxonomy.categories.map(c=>`<option value="${c.id}"${c.id===p.category?' selected':''}>${esc(c.name)}</option>`).join('');
+  $('#f-form').innerHTML=taxonomy.forms.map(c=>`<option value="${c.id}"${c.id===p.form?' selected':''}>${esc(c.name)}</option>`).join('');
+  $('#f-material').value=p.material||'';$('#f-short').value=p.shortDescription||'';$('#f-desc').value=p.description||'';
+  $('#f-appsum').value=p.applicationSummary||'';$('#f-apps').value=(p.applications||[]).join('\n');$('#f-features').value=(p.features||[]).join('\n');
+  $('#f-tags').innerHTML=taxonomy.applicationTags.map(t=>`<label><input type="checkbox" value="${t.id}"${(p.applicationTags||[]).includes(t.id)?' checked':''}>${esc(t.name)}</label>`).join('');
+  $('#f-specs').innerHTML='';(p.specifications||[]).forEach(s=>addSpec(s.label,s.value));
+  $('#f-options').value=(p.options||[]).join('\n');
+  $('#f-related').innerHTML=content.products.filter(x=>x.slug!==p.slug&&x.slug).map(x=>`<label><input type="checkbox" value="${x.slug}"${(p.relatedProducts||[]).includes(x.slug)?' checked':''}>${esc(x.name)}</label>`).join('');
+  $('#f-keywords').value=(p.searchKeywords||[]).join(', ');
+  $('#f-image').value=p.image||'';setPreview(imgOf(p));$('#f-file').value='';
+  $('#f-active').checked=p.active!==false;$('#f-featured').checked=(content.featuredSlugs||[]).includes(p.slug);
+  $('#e-delete').classList.toggle('hidden',isNew);
+  preview();
+  show('edit');
+}
+function setPreview(src){$('#f-preview').innerHTML=src?`<img src="${esc(src)}" alt="" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'Image not found yet',style:'color:#666;font-size:13px'}))">`:'<span style="color:#666;font-size:13px">No image</span>';}
+function addSpec(l='',v=''){const d=document.createElement('div');d.className='spec-row';d.innerHTML=`<input placeholder="Label, e.g. Pipe sizes" value="${esc(l)}"><input placeholder="Value" value="${esc(v)}"><button class="btn btn--ghost btn--sm" type="button">✕</button>`;d.querySelector('button').onclick=()=>d.remove();$('#f-specs').appendChild(d);}
+$('#f-spec-add').addEventListener('click',()=>addSpec());
+/* live preview mirroring the product page */
+function preview(){const li=v=>lines(v).map(x=>`<li>${esc(x)}</li>`).join('');$('#pv-code').textContent=[$('#f-code').value,catName($('#f-category').value)].filter(Boolean).join(' · ');$('#pv-name').textContent=$('#f-name').value||'Product name';$('#pv-short').textContent=$('#f-short').value;$('#pv-material').textContent=$('#f-material').value||'—';$('#pv-appsum').textContent=$('#f-appsum').value||'—';$('#pv-apps').innerHTML=li($('#f-apps').value);$('#pv-features').innerHTML=li($('#f-features').value);const src=$('#f-image').value||`/assets/img/products/${$('#f-slug').value}.webp`;if($('#pv-img').getAttribute('src')!==src)$('#pv-img').src=src;}
+['#f-code','#f-name','#f-short','#f-material','#f-appsum','#f-apps','#f-features','#f-image','#f-slug'].forEach(id=>$(id).addEventListener('input',preview));$('#f-category').addEventListener('change',preview);
+$('#f-name').addEventListener('input',()=>{if(!content.products[editing].slug||editing===content.products.length-1&&!content.products[editing].name){$('#f-slug').value=slugify($('#f-name').value);}$('#f-slug-preview').textContent=$('#f-slug').value;});
+$('#f-slug').addEventListener('input',()=>{$('#f-slug').value=slugify($('#f-slug').value);$('#f-slug-preview').textContent=$('#f-slug').value;});
+$('#f-file').addEventListener('change',async()=>{const f=$('#f-file').files[0];if(!f)return;if(f.size>3*1024*1024)return toast('Image must be under 3 MB',true);
+  const slug=$('#f-slug').value||slugify($('#f-name').value);if(!slug)return toast('Enter the product name first so the image can be named',true);
+  const ext=f.name.split('.').pop().toLowerCase();const filename=`${slug}.${ext==='jpeg'?'jpg':ext}`;
+  const base64=await new Promise(r=>{const fr=new FileReader();fr.onload=()=>r(fr.result.split(',')[1]);fr.readAsDataURL(f);});
+  try{toast('Uploading image…');const d=await api('uploadImage',{filename,base64});$('#f-image').value=d.path;setPreview(URL.createObjectURL(f));$('#pv-img').src=URL.createObjectURL(f);toast('Image uploaded. It appears on the site after the next publish.');}catch(e){toast(e.message,true);}
+});
+$('#e-apply').addEventListener('click',()=>{
+  const p=content.products[editing];const name=$('#f-name').value.trim(),slug=$('#f-slug').value.trim();
+  if(!name||!slug||!$('#f-short').value.trim())return toast('Name, slug and short description are required',true);
+  if(content.products.some((x,i)=>i!==editing&&x.slug===slug))return toast('Another product already uses this slug',true);
+  Object.assign(p,{code:$('#f-code').value.trim(),name,slug,category:$('#f-category').value,form:$('#f-form').value,material:$('#f-material').value.trim(),shortDescription:$('#f-short').value.trim(),description:$('#f-desc').value.trim(),applicationSummary:$('#f-appsum').value.trim(),applications:lines($('#f-apps').value),features:lines($('#f-features').value),applicationTags:$$('#f-tags input:checked').map(x=>x.value),specifications:$$('#f-specs .spec-row').map(r=>({label:r.children[0].value.trim(),value:r.children[1].value.trim()})).filter(s=>s.label&&s.value),options:lines($('#f-options').value),relatedProducts:$$('#f-related input:checked').map(x=>x.value),searchKeywords:$('#f-keywords').value.split(',').map(s=>s.trim()).filter(Boolean),active:$('#f-active').checked});
+  const im=$('#f-image').value.trim();if(im)p.image=im;else delete p.image;
+  content.featuredSlugs=(content.featuredSlugs||[]).filter(s=>s!==slug);if($('#f-featured').checked)content.featuredSlugs.push(slug);
+  setDirty(true);renderProducts();renderHero();show('products');toast('Applied. Click "Save & publish" to make it live.');
+});
+$('#e-delete').addEventListener('click',()=>{if(!confirm('Delete this product? It will be removed from the website on the next publish.'))return;const p=content.products.splice(editing,1)[0];content.featuredSlugs=(content.featuredSlugs||[]).filter(s=>s!==p.slug);content.hero.slides=(content.hero.slides||[]).filter(s=>s.slug!==p.slug);content.products.forEach(x=>x.relatedProducts=(x.relatedProducts||[]).filter(s=>s!==p.slug));setDirty(true);renderProducts();renderHero();show('products');});
+$('#e-back').addEventListener('click',()=>{if(editing===content.products.length-1&&!content.products[editing].name)content.products.pop();renderProducts();show('products');});
+
+/* ---- hero ---- */
+function renderHero(){
+  const h=content.hero=content.hero||{slides:[]};
+  $('#h-kicker').value=h.kicker||'';$('#h-title').value=h.title||'';$('#h-accent').value=h.titleAccent||'';$('#h-text').value=h.text||'';
+  const opts=sel=>content.products.filter(p=>p.active!==false).map(p=>`<option value="${p.slug}"${p.slug===sel?' selected':''}>${esc(p.name)}</option>`).join('');
+  $('#h-slides').innerHTML=(h.slides||[]).map((s,i)=>`<div class="slide-row" data-i="${i}"><select data-k="slug">${opts(s.slug)}</select><input data-k="badge" placeholder="Badge" value="${esc(s.badge||'')}"><input data-k="caption" placeholder="Caption" value="${esc(s.caption||'')}"><button class="btn btn--ghost btn--sm" data-up>↑</button><button class="btn btn--ghost btn--sm" data-del>✕</button></div>`).join('');
+  $$('#h-slides .slide-row').forEach(r=>{const i=Number(r.dataset.i);r.querySelectorAll('[data-k]').forEach(el=>el.addEventListener('input',()=>{h.slides[i][el.dataset.k]=el.value;setDirty(true);}));r.querySelector('[data-del]').onclick=()=>{h.slides.splice(i,1);setDirty(true);renderHero();};r.querySelector('[data-up]').onclick=()=>{if(i>0){[h.slides[i-1],h.slides[i]]=[h.slides[i],h.slides[i-1]];setDirty(true);renderHero();}};});
+}
+['kicker','title','accent','text'].forEach(k=>$('#h-'+k).addEventListener('input',()=>{content.hero[k==='accent'?'titleAccent':k]=$('#h-'+k).value;setDirty(true);}));
+$('#h-add').addEventListener('click',()=>{const p=content.products[0];content.hero.slides.push({slug:p.slug,badge:'Available to order',caption:p.applicationSummary||''});setDirty(true);renderHero();});
+
+/* ---- site ---- */
+function renderSite(){const s=content.site;$('#s-phone').value=s.phone||'';$('#s-wa').value=s.whatsappNumber||'';$('#s-email').value=s.email||'';$('#s-address').value=s.address||'';$('#s-wamsg').value=s.whatsappWidgetMessage||'';$('#s-tagline').value=s.tagline||'';$('#s-dev').value=(s.developedBy||{}).name||'';$('#s-devurl').value=(s.developedBy||{}).url||'';}
+const bind=(id,fn)=>$(id).addEventListener('input',()=>{fn($(id).value);setDirty(true);});
+bind('#s-phone',v=>content.site.phone=v.replace(/\D/g,''));bind('#s-wa',v=>content.site.whatsappNumber=v.replace(/\D/g,''));bind('#s-email',v=>content.site.email=v.trim());bind('#s-address',v=>content.site.address=v.trim()||null);bind('#s-wamsg',v=>content.site.whatsappWidgetMessage=v);bind('#s-tagline',v=>content.site.tagline=v);
+bind('#s-dev',v=>{content.site.developedBy=content.site.developedBy||{};content.site.developedBy.name=v;});bind('#s-devurl',v=>{content.site.developedBy=content.site.developedBy||{};content.site.developedBy.url=v;});
+
+/* ---- save ---- */
+$('#save').addEventListener('click',async()=>{$('#save').disabled=true;$('#save').textContent='Publishing…';try{const d=await api('saveContent',{content,sha});sha=d.sha;setDirty(false);toast(GH_MODE?'Saved to GitHub. The site rebuilds in 1–2 minutes (see the Actions tab in the repo).':'Saved. The website is rebuilding and will update in about a minute.');}catch(e){toast(e.message+(e.message.includes('409')?' — someone else saved meanwhile. Reload and reapply your change.':''),true);$('#save').disabled=false;}finally{$('#save').textContent='Save & publish';}});
+$('#discard').addEventListener('click',async()=>{if(dirty&&!confirm('Discard all unsaved changes?'))return;await boot();show('products');});
+
+/* ---- leads ---- */
+$('#l-status').innerHTML+=STATUSES.map(s=>`<option>${s}</option>`).join('');
+let leads=[];
+async function loadLeads(){try{const d=await api('listLeads',{status:$('#l-status').value});leads=d.leads;$('#l-empty').classList.toggle('hidden',leads.length>0);$('#l-empty').textContent='No leads yet for this filter.';renderLeads();}catch(e){$('#l-rows').innerHTML='';$('#l-empty').classList.remove('hidden');$('#l-empty').textContent=e.message;}}
+function renderLeads(){$('#l-rows').innerHTML=leads.map(l=>`<tr><td><small>${esc((l.created_at||'').slice(0,16).replace('T',' '))}</small><br><small style="color:var(--text-2)">${esc(l.lead_id)}</small></td><td><strong>${esc(l.name)}</strong><br><small>${esc(l.company||'')}${l.city?' · '+esc(l.city):''}</small></td><td><a href="tel:${esc(l.mobile)}">${esc(l.mobile)}</a><br><a href="https://wa.me/91${esc(String(l.mobile).replace(/\D/g,'').slice(-10))}" target="_blank" style="color:var(--green);font-weight:700;font-size:12px">WhatsApp</a>${l.email?'<br><small>'+esc(l.email)+'</small>':''}</td><td>${esc(l.product||l.resource||'—')}<br><small style="color:var(--text-2)">${esc(l.type)}${l.utm_source?' · '+esc(l.utm_source):''}</small></td><td style="max-width:260px"><small>${[l.quantity&&'Qty: '+l.quantity,l.specification&&'Spec: '+l.specification,l.application&&'App: '+l.application,l.message].filter(Boolean).map(esc).join('<br>')}</small></td><td><select data-id="${esc(l.lead_id)}" data-k="status" style="min-height:34px;padding:0 6px;border:1px solid #cfcfcf;border-radius:2px">${STATUSES.map(s=>`<option${s===l.status?' selected':''}>${s}</option>`).join('')}</select></td><td><input data-id="${esc(l.lead_id)}" data-k="assignedTo" placeholder="Assigned to" value="${esc(l.assigned_to||'')}" style="width:110px;min-height:30px;padding:0 6px;border:1px solid #cfcfcf;border-radius:2px;margin-bottom:4px"><br><input type="date" data-id="${esc(l.lead_id)}" data-k="followUpDate" value="${esc(l.follow_up_date||'')}" style="min-height:30px;padding:0 6px;border:1px solid #cfcfcf;border-radius:2px;margin-bottom:4px"><br><input data-id="${esc(l.lead_id)}" data-k="followUpNotes" placeholder="Notes" value="${esc(l.follow_up_notes||'')}" style="width:160px;min-height:30px;padding:0 6px;border:1px solid #cfcfcf;border-radius:2px"></td></tr>`).join('');
+  $$('#l-rows [data-id]').forEach(el=>el.addEventListener('change',async()=>{try{await api('updateLead',{leadId:el.dataset.id,[el.dataset.k]:el.value});toast('Lead updated');}catch(e){toast(e.message,true);}}));}
+$('#l-refresh').addEventListener('click',loadLeads);$('#l-status').addEventListener('change',loadLeads);
+$('#l-export').addEventListener('click',()=>{if(!leads.length)return;const cols=Object.keys(leads[0]);const csv=[cols.join(','),...leads.map(l=>cols.map(c=>`"${String(l[c]??'').replace(/"/g,'""')}"`).join(','))].join('\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='eic-leads.csv';a.click();});
+
+if(token)boot();
+</script>
+</body>
+</html>

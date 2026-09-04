@@ -1,0 +1,14 @@
+{
+  "name": "eic-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Experts Industrial Corporation — static industrial insulation catalogue + lead generation site",
+  "scripts": {
+    "export-data": "node -e \"const d=require('./src/data');require('fs').writeFileSync('scripts/_data.json',JSON.stringify({products:d.products,taxonomy:d.taxonomy,site:d.site}))\"",
+    "pdfs": "npm run export-data && python3 scripts/make_pdfs.py",
+    "build": "node scripts/build.js",
+    "dev": "npm run build && npx --yes serve dist -l 3000",
+    "preview": "npx --yes serve dist -l 3000"
+  },
+  "engines": { "node": ">=18" }
+}
