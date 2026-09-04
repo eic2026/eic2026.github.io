@@ -27,7 +27,16 @@ async function postWeb3Forms(body) {
   return { ok: true, leadId: id };
 }
 
+/* Google Apps Script transport (stores in Sheet + sends thank-you). */
+async function postAppsScript(body) {
+  const res = await fetch(cfg().leadsEndpoint, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(body) });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok || data.error) throw new Error(data.error || 'Send failed');
+  return data; // { ok, leadId }
+}
+
 async function post(body) {
+  if (cfg().leadsEndpoint) return postAppsScript(body);
   if (cfg().mode === 'github') return postWeb3Forms(body);
   const res = await fetch(endpoint(), {
     method: 'POST',
