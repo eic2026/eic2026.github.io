@@ -1,4 +1,4 @@
-# Experts Industrial Corporation — website
+# Experts Industrial Corporation — website 
 
 Static industrial product catalogue + lead generation site. Plain HTML/CSS/JS, generated from a data layer by a
 small Node build script. One serverless function (`api/enquiry.js`) receives enquiries.
