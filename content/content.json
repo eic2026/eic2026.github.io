@@ -16,7 +16,7 @@
     }
   },
   "hero": {
-    "kicker": "Industrial insulation & engineering materials ",
+    "kicker": "Industrial insulation & engineering materials Available",
     "title": "Premium Quality industrial insulation",
     "titleAccent": "Maximum efficiency ",
     "text": "High-performance insulation materials and industrial products for piping, HVAC, refrigeration, equipment and industrial applications.",
@@ -959,6 +959,28 @@
     {
       "id": 21,
       "code": "EIC-21",
+      "name": "",
+      "slug": "",
+      "category": "thermal-insulation",
+      "form": "pipe-section",
+      "material": "",
+      "shortDescription": "",
+      "description": "",
+      "applications": [],
+      "applicationSummary": "",
+      "applicationTags": [],
+      "features": [],
+      "specifications": [],
+      "options": [
+        "Contact EIC for available specifications."
+      ],
+      "relatedProducts": [],
+      "searchKeywords": [],
+      "active": true
+    },
+    {
+      "id": 22,
+      "code": "EIC-22",
       "name": "",
       "slug": "",
       "category": "thermal-insulation",
