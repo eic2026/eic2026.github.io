@@ -17,7 +17,7 @@
   },
   "hero": {
     "kicker": "Industrial insulation & engineering materials ",
-    "title": "Premium industrial insulation",
+    "title": "Premium industrial insulation.",
     "titleAccent": "Maximum efficiency ",
     "text": "High-performance insulation materials and industrial products for piping, HVAC, refrigeration, equipment and industrial applications.",
     "slides": [
@@ -32,7 +32,7 @@
         "caption": "High-temperature pipework"
       },
       {
-        "slug": "nbr-epdm-rubber-insulation",
+        "slug": "ss-gi-binding-wire",
         "badge": "Available to order",
         "caption": "Chilled water & refrigeration lines"
       },
@@ -955,6 +955,28 @@
         "waterproofing",
         "end cap sealing"
       ]
+    },
+    {
+      "id": 21,
+      "code": "EIC-21",
+      "name": "",
+      "slug": "",
+      "category": "thermal-insulation",
+      "form": "pipe-section",
+      "material": "",
+      "shortDescription": "",
+      "description": "",
+      "applications": [],
+      "applicationSummary": "",
+      "applicationTags": [],
+      "features": [],
+      "specifications": [],
+      "options": [
+        "Contact EIC for available specifications."
+      ],
+      "relatedProducts": [],
+      "searchKeywords": [],
+      "active": true
     }
   ]
 }
