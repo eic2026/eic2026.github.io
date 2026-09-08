@@ -38,12 +38,35 @@ st = {
 
 from PIL import Image as PILImage
 TMP = os.path.join(ROOT, 'scripts', '_pdfimg'); os.makedirs(TMP, exist_ok=True)
+_PLACEHOLDER = os.path.join(TMP, '_placeholder.jpg')
+def _placeholder():
+    """Neutral 'image coming soon' tile, used when a product image is missing or unreadable."""
+    if not os.path.exists(_PLACEHOLDER):
+        im = PILImage.new('RGB', (560, 385), '#FBF6E6')
+        try:
+            from PIL import ImageDraw
+            d = ImageDraw.Draw(im)
+            d.rectangle([0, 0, 559, 384], outline='#D4AF37', width=3)
+            d.text((280, 185), 'Image coming soon', fill='#666666', anchor='mm')
+        except Exception:
+            pass
+        im.save(_PLACEHOLDER, 'JPEG', quality=72, optimize=True)
+    return _PLACEHOLDER
+
 def pdf_image(p):
-    """Compact JPEG copy of the product image so PDFs stay small."""
-    out = os.path.join(TMP, p['slug'] + '.jpg')
-    if not os.path.exists(out):
-        PILImage.open(os.path.join(ROOT, 'public', p['thumb'].lstrip('/'))).convert('RGB').resize((560, 385)).save(out, 'JPEG', quality=72, optimize=True)
-    return out
+    """Compact JPEG copy of the product image so PDFs stay small.
+    Never raises: a missing or unreadable image falls back to a placeholder so one
+    bad admin entry can't fail the whole build."""
+    out = os.path.join(TMP, (p.get('slug') or 'unknown') + '.jpg')
+    if os.path.exists(out):
+        return out
+    src = os.path.join(ROOT, 'public', (p.get('thumb') or '').lstrip('/'))
+    try:
+        PILImage.open(src).convert('RGB').resize((560, 385)).save(out, 'JPEG', quality=72, optimize=True)
+        return out
+    except Exception as e:
+        print('  WARN: image missing for "%s" (%s) — using placeholder' % (p.get('name') or p.get('slug'), p.get('thumb')))
+        return _placeholder()
 
 def cat_name(cid):
     return next(c['name'] for c in TAX['categories'] if c['id'] == cid)
