@@ -32,6 +32,11 @@
         "caption": "High-temperature pipework"
       },
       {
+        "slug": "aerogel-insulation",
+        "badge": "Supply on request",
+        "caption": "High-performance industrial insulation"
+      },
+      {
         "slug": "pir-pur-sheets",
         "badge": "Available to order",
         "caption": "Chilled water & refrigeration lines"
@@ -40,11 +45,6 @@
         "slug": "aluminium-cladding-sheets",
         "badge": "Available to order",
         "caption": "Weather protection over insulation"
-      },
-      {
-        "slug": "aerogel-insulation",
-        "badge": "Supply on request",
-        "caption": "High-performance industrial insulation"
       }
     ]
   },
