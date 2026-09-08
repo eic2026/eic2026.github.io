@@ -62,7 +62,8 @@
     "aerogel-insulation",
     "insulation-fasteners-pins",
     "puf-pipe-sections",
-    "puf-pipie-support"
+    "puf-pipie-support",
+    "puf-pipe-support"
   ],
   "products": [
     {
@@ -965,8 +966,8 @@
     {
       "id": 21,
       "code": "EIC-23",
-      "name": "PUF PIPIE SUPPORT",
-      "slug": "puf-pipie-support",
+      "name": "PUF PIPE SUPPORT",
+      "slug": "puf-pipe-support",
       "category": "thermal-insulation",
       "form": "pipe-section",
       "material": "polyurethane",
@@ -1013,7 +1014,7 @@
         "PUF SUPPORT"
       ],
       "active": true,
-      "image": "/assets/img/products/puf-pipie-support.png"
+      "image": "/assets/img/products/puf-pipie-support.webp"
     },
     {
       "id": 22,
