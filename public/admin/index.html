@@ -83,6 +83,7 @@ tr:hover td{background:#fbfaf6}td img{width:64px;height:44px;object-fit:cover;bo
     <nav>
       <a data-view="products" class="active">Products</a>
       <a data-view="hero">Homepage slides</a>
+      <a data-view="categories">Categories</a>
       <a data-view="site">Contact & company</a>
       <a data-view="leads">Leads</a>
       <a href="/" target="_blank">View website ↗</a>
@@ -174,6 +175,13 @@ tr:hover td{background:#fbfaf6}td img{width:64px;height:44px;object-fit:cover;bo
       </div>
     </section>
 
+    <!-- CATEGORIES -->
+    <section id="view-categories" class="hidden">
+      <div class="top"><div><h2>Categories</h2><p>Product groups shown across the site. Products keep working even if you rename a group.</p></div><button class="btn btn--gold" id="c-add">+ Add category</button></div>
+      <div class="notice">Deleting a category does not delete its products — reassign them first in Products, or they will show under an "Other" group until you do.</div>
+      <div id="c-rows"></div>
+    </section>
+
     <!-- SITE -->
     <section id="view-site" class="hidden">
       <div class="top"><div><h2>Contact & company</h2><p>Used in the header, footer, CTAs, contact page, PDFs and structured data.</p></div></div>
@@ -253,16 +261,17 @@ async function boot(){
     taxonomy=await fetch('/admin/taxonomy.json').then(r=>r.json());
     const d=await api('getContent');content=d.content;sha=d.sha;
     $('#login').classList.add('hidden');$('#shell').classList.remove('hidden');
-    renderProducts();renderHero();renderSite();setDirty(false);
+    renderProducts();renderHero();renderCategories();renderSite();setDirty(false);
   }catch(err){toast(err.message,true);if(!token)logout();}
 }
 
 /* ---- nav ---- */
 $$('.side nav a[data-view]').forEach(a=>a.addEventListener('click',()=>show(a.dataset.view)));
-function show(v){$$('.side nav a[data-view]').forEach(a=>a.classList.toggle('active',a.dataset.view===v));['products','edit','hero','site','leads'].forEach(x=>$('#view-'+x).classList.toggle('hidden',x!==v));if(v==='leads')loadLeads();window.scrollTo(0,0);}
+function show(v){$$('.side nav a[data-view]').forEach(a=>a.classList.toggle('active',a.dataset.view===v));['products','edit','hero','categories','site','leads'].forEach(x=>$('#view-'+x).classList.toggle('hidden',x!==v));if(v==='leads')loadLeads();window.scrollTo(0,0);}
 
 /* ---- products ---- */
-const catName=id=>(taxonomy.categories.find(c=>c.id===id)||{}).name||id, formName=id=>(taxonomy.forms.find(c=>c.id===id)||{}).name||id;
+const cats=()=>((content&&content.categories&&content.categories.length)?content.categories:taxonomy.categories);
+const catName=id=>(cats().find(c=>c.id===id)||{}).name||id, formName=id=>(taxonomy.forms.find(c=>c.id===id)||{}).name||id;
 const imgOf=p=>p.image||`/assets/img/products/${p.slug}.webp`;
 function renderProducts(){
   $('#p-count').textContent=content.products.length;
@@ -275,7 +284,7 @@ function openEdit(i,isNew=false){
   editing=i;const p=content.products[i];
   $('#e-title').textContent=isNew?'Add product':'Edit: '+p.name;
   $('#f-code').value=p.code||'';$('#f-name').value=p.name||'';$('#f-slug').value=p.slug||'';$('#f-slug-preview').textContent=p.slug||'';
-  $('#f-category').innerHTML=taxonomy.categories.map(c=>`<option value="${c.id}"${c.id===p.category?' selected':''}>${esc(c.name)}</option>`).join('');
+  $('#f-category').innerHTML=cats().map(c=>`<option value="${c.id}"${c.id===p.category?' selected':''}>${esc(c.name)}</option>`).join('');
   $('#f-form').innerHTML=taxonomy.forms.map(c=>`<option value="${c.id}"${c.id===p.form?' selected':''}>${esc(c.name)}</option>`).join('');
   $('#f-material').value=p.material||'';$('#f-short').value=p.shortDescription||'';$('#f-desc').value=p.description||'';
   $('#f-appsum').value=p.applicationSummary||'';$('#f-apps').value=(p.applications||[]).join('\n');$('#f-features').value=(p.features||[]).join('\n');
@@ -326,6 +335,28 @@ function renderHero(){
 }
 ['kicker','title','accent','text'].forEach(k=>$('#h-'+k).addEventListener('input',()=>{content.hero[k==='accent'?'titleAccent':k]=$('#h-'+k).value;setDirty(true);}));
 $('#h-add').addEventListener('click',()=>{const p=content.products[0];content.hero.slides.push({slug:p.slug,badge:'Available to order',caption:p.applicationSummary||''});setDirty(true);renderHero();});
+
+
+/* ---- categories ---- */
+function slugifyId(s){return s.toLowerCase().replace(/&/g,' and ').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');}
+function renderCategories(){
+  content.categories=content.categories||[];
+  $('#c-rows').innerHTML=content.categories.map((c,i)=>`<div class="card" data-i="${i}">
+    <div class="row" style="grid-template-columns:1fr auto;gap:12px;align-items:end">
+      <div class="field" style="margin:0"><label>Name</label><input data-k="name" value="${esc(c.name||'')}"></div>
+      <button class="btn btn--danger btn--sm" data-del type="button" style="margin-bottom:2px">Delete</button>
+    </div>
+    <div class="field" style="margin:10px 0 0"><label>Description</label><input data-k="description" value="${esc(c.description||'')}"></div>
+    <small style="color:var(--text-2)">ID: <code>${esc(c.id)}</code> · ${content.products.filter(p=>p.category===c.id).length} product(s)</small>
+  </div>`).join('');
+  $$('#c-rows .card').forEach(card=>{const i=Number(card.dataset.i);
+    card.querySelectorAll('[data-k]').forEach(el=>el.addEventListener('input',()=>{content.categories[i][el.dataset.k]=el.value;setDirty(true);}));
+    card.querySelector('[data-del]').onclick=()=>{const cat=content.categories[i];const n=content.products.filter(p=>p.category===cat.id).length;
+      if(!confirm(`Delete category "${cat.name}"?`+(n?`\n\n${n} product(s) use it — reassign them in Products afterwards.`:'')))return;
+      content.categories.splice(i,1);setDirty(true);renderCategories();};
+  });
+}
+$('#c-add').addEventListener('click',()=>{const name='New category';let id=slugifyId(name),n=1;while(content.categories.some(c=>c.id===id)){id=slugifyId(name)+'-'+(++n);}content.categories.push({id,name,description:''});setDirty(true);renderCategories();});
 
 /* ---- site ---- */
 function renderSite(){const s=content.site;$('#s-phone').value=s.phone||'';$('#s-wa').value=s.whatsappNumber||'';$('#s-email').value=s.email||'';$('#s-address').value=s.address||'';$('#s-wamsg').value=s.whatsappWidgetMessage||'';$('#s-tagline').value=s.tagline||'';$('#s-dev').value=(s.developedBy||{}).name||'';$('#s-devurl').value=(s.developedBy||{}).url||'';}
