@@ -16,28 +16,23 @@
     }
   },
   "hero": {
-    "kicker": "Industrial insulation & engineering materials Available",
-    "title": "Premium Quality industrial insulation",
-    "titleAccent": "Maximum efficiency ",
+    "kicker": "Industrial insulation & engineering materials",
+    "title": "Premium industrial insulation.",
+    "titleAccent": "Maximum efficiency.",
     "text": "High-performance insulation materials and industrial products for piping, HVAC, refrigeration, equipment and industrial applications.",
     "slides": [
       {
-        "slug": "puf-pipe-support",
+        "slug": "puf-pipe-sections",
         "badge": "Available to order",
         "caption": "Chilled, hot water & process piping"
       },
       {
-        "slug": "puf-pipe-sections",
+        "slug": "rockwool-pipe-sections",
         "badge": "Available to order",
         "caption": "High-temperature pipework"
       },
       {
-        "slug": "aerogel-insulation",
-        "badge": "Supply on request",
-        "caption": "High-performance industrial insulation"
-      },
-      {
-        "slug": "pir-pur-sheets",
+        "slug": "nbr-epdm-rubber-insulation",
         "badge": "Available to order",
         "caption": "Chilled water & refrigeration lines"
       },
@@ -47,23 +42,21 @@
         "caption": "Weather protection over insulation"
       },
       {
-        "slug": "puf-pipe-sections",
-        "badge": "Available to order",
-        "caption": "Chilled/hot water and process piping."
+        "slug": "aerogel-insulation",
+        "badge": "Supply on request",
+        "caption": "High-performance industrial insulation"
       }
     ]
   },
   "featuredSlugs": [
+    "puf-pipe-sections",
     "pir-pipe-sections",
     "rockwool-pipe-sections",
     "nbr-epdm-rubber-insulation",
     "xlpe-insulation",
     "aluminium-cladding-sheets",
     "aerogel-insulation",
-    "insulation-fasteners-pins",
-    "puf-pipe-sections",
-    "puf-pipie-support",
-    "puf-pipe-support"
+    "insulation-fasteners-pins"
   ],
   "products": [
     {
@@ -74,19 +67,19 @@
       "category": "thermal-insulation",
       "form": "pipe-section",
       "material": "Polyurethane foam (PUF)",
-      "shortDescription": "Pre-formed rigid polyurethane foam sections for chilled, hot water and process piping",
+      "shortDescription": "Pre-formed rigid polyurethane foam sections for chilled, hot water and process piping.",
       "description": "PUF pipe sections are pre-formed rigid polyurethane foam insulation supplied in half-shell or full-round form to fit standard pipe sizes. The closed-cell structure of polyurethane foam makes these sections a common choice for chilled water, hot water and process piping where controlling heat gain, heat loss and surface condensation matters. Sections are fitted around the pipe, secured, and typically finished with a vapour barrier and cladding.",
       "applications": [
         "Chilled water piping",
         "Hot water piping",
         "Process piping"
       ],
-      "applicationSummary": "Chilled/hot water and process piping.",
+      "applicationSummary": "Chilled/hot water and process piping",
       "applicationTags": [
-        "hvac",
         "chilled-water",
         "hot-water",
         "process-piping",
+        "hvac",
         "industrial"
       ],
       "features": [
@@ -97,7 +90,7 @@
       ],
       "specifications": [],
       "options": [
-        "Available pipe sizes, wall thicknesses and lengths — Contact EIC for available specifications."
+        "Available pipe sizes, wall thicknesses and lengths \u2014 Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "pir-pipe-sections",
@@ -111,8 +104,7 @@
         "pipe insulation",
         "preformed",
         "half shell"
-      ],
-      "active": true
+      ]
     },
     {
       "id": 2,
@@ -144,7 +136,7 @@
       ],
       "specifications": [],
       "options": [
-        "Available sheet sizes and thicknesses — Contact EIC for available specifications."
+        "Available sheet sizes and thicknesses \u2014 Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "pir-pur-sheets",
@@ -189,7 +181,7 @@
       ],
       "specifications": [],
       "options": [
-        "Available pipe sizes and thicknesses — Contact EIC for available specifications."
+        "Available pipe sizes and thicknesses \u2014 Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "puf-pipe-sections",
@@ -234,7 +226,7 @@
       ],
       "specifications": [],
       "options": [
-        "Grades, sheet sizes and thicknesses — Contact EIC for available specifications."
+        "Grades, sheet sizes and thicknesses \u2014 Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "puf-slabs-sheets",
@@ -278,7 +270,7 @@
       ],
       "specifications": [],
       "options": [
-        "Available pipe sizes, densities and thicknesses — Contact EIC for available specifications."
+        "Available pipe sizes, densities and thicknesses \u2014 Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "rockwool-slabs",
@@ -291,7 +283,8 @@
         "stone wool",
         "rock wool",
         "steam pipe insulation"
-      ]
+      ],
+      "image": "/assets/img/products/puf-pipie-support.webp"
     },
     {
       "id": 6,
@@ -324,7 +317,7 @@
       ],
       "specifications": [],
       "options": [
-        "Available slab sizes, densities and thicknesses — Contact EIC for available specifications."
+        "Available slab sizes, densities and thicknesses \u2014 Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "rockwool-pipe-sections",
@@ -367,7 +360,7 @@
       ],
       "specifications": [],
       "options": [
-        "Roll sizes, thicknesses and facings — Contact EIC for available specifications."
+        "Roll sizes, thicknesses and facings \u2014 Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "glass-wool-pipe-sections",
@@ -411,7 +404,7 @@
       ],
       "specifications": [],
       "options": [
-        "Pipe sizes, thicknesses and facings — Contact EIC for available specifications."
+        "Pipe sizes, thicknesses and facings \u2014 Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "glass-wool-rolls",
@@ -453,7 +446,7 @@
       ],
       "specifications": [],
       "options": [
-        "Tube sizes, sheet sizes and thicknesses — Contact EIC for available specifications."
+        "Tube sizes, sheet sizes and thicknesses \u2014 Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "xlpe-insulation",
@@ -498,7 +491,7 @@
       ],
       "specifications": [],
       "options": [
-        "Sizes, thicknesses and facings — Contact EIC for available specifications."
+        "Sizes, thicknesses and facings \u2014 Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "nbr-epdm-rubber-insulation",
@@ -543,7 +536,7 @@
       ],
       "specifications": [],
       "options": [
-        "Blanket thicknesses and roll sizes — Contact EIC for available specifications."
+        "Blanket thicknesses and roll sizes \u2014 Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "rockwool-pipe-sections",
@@ -587,7 +580,7 @@
       ],
       "specifications": [],
       "options": [
-        "Sheet gauges, sizes and finishes — Contact EIC for available specifications."
+        "Sheet gauges, sizes and finishes \u2014 Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "gi-cladding-sheets",
@@ -632,7 +625,7 @@
       ],
       "specifications": [],
       "options": [
-        "Foil thicknesses, widths and reinforcement — Contact EIC for available specifications."
+        "Foil thicknesses, widths and reinforcement \u2014 Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "insulation-tape",
@@ -677,7 +670,7 @@
       ],
       "specifications": [],
       "options": [
-        "Sheet gauges and sizes — Contact EIC for available specifications."
+        "Sheet gauges and sizes \u2014 Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "aluminium-cladding-sheets",
@@ -722,7 +715,7 @@
       ],
       "specifications": [],
       "options": [
-        "Adhesive types and pack sizes — Contact EIC for available specifications."
+        "Adhesive types and pack sizes \u2014 Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "nbr-epdm-rubber-insulation",
@@ -767,7 +760,7 @@
       ],
       "specifications": [],
       "options": [
-        "Tape types, widths and roll lengths — Contact EIC for available specifications."
+        "Tape types, widths and roll lengths \u2014 Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "aluminium-foil",
@@ -812,7 +805,7 @@
       ],
       "specifications": [],
       "options": [
-        "Wire grades, gauges and coil weights — Contact EIC for available specifications."
+        "Wire grades, gauges and coil weights \u2014 Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "rockwool-pipe-sections",
@@ -857,7 +850,7 @@
       ],
       "specifications": [],
       "options": [
-        "Pipe sizes, insert lengths and thicknesses — Contact EIC for available specifications."
+        "Pipe sizes, insert lengths and thicknesses \u2014 Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "puf-pipe-sections",
@@ -902,7 +895,7 @@
       ],
       "specifications": [],
       "options": [
-        "Pin types, lengths and washer sizes — Contact EIC for available specifications."
+        "Pin types, lengths and washer sizes \u2014 Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "rockwool-slabs",
@@ -947,7 +940,7 @@
       ],
       "specifications": [],
       "options": [
-        "Sealant types and pack sizes — Contact EIC for available specifications."
+        "Sealant types and pack sizes \u2014 Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "aluminium-cladding-sheets",
@@ -962,81 +955,23 @@
         "waterproofing",
         "end cap sealing"
       ]
+    }
+  ],
+  "categories": [
+    {
+      "id": "thermal-insulation",
+      "name": "Thermal Insulation",
+      "description": "Pipe sections, slabs, sheets, rolls and flexible insulation for hot, cold and process systems."
     },
     {
-      "id": 21,
-      "code": "EIC-23",
-      "name": "PUF PIPE SUPPORT",
-      "slug": "puf-pipe-support",
-      "category": "thermal-insulation",
-      "form": "pipe-section",
-      "material": "polyurethane",
-      "shortDescription": "High-density PUF pipe support providing excellent thermal insulation, structural strength, moisture resistance, and long service life for insulated piping",
-      "description": "High-density Polyurethane Foam (PUF) Pipe Supports are engineered insulation and load-bearing components designed to support insulated piping while minimizing thermal bridging and heat transfer. They provide excellent compressive strength, low thermal conductivity, moisture resistance, dimensional stability, and long-term durability. PUF pipe supports are widely used in HVAC, chilled water, refrigeration, cold storage, and industrial piping systems.",
-      "applications": [
-        "HVAC Systems",
-        "Chilled Water Lines",
-        "Refrigeration Systems",
-        "Cold Storage Piping",
-        "Industrial Process Piping"
-      ],
-      "applicationSummary": "Used for supporting and insulating insulated piping systems, particularly in chilled water, HVAC, refrigeration, cold storage, and industrial applications. It helps prevent thermal bridging, heat gain/loss, condensation, and insulation damage while providing reliable mechanical support.",
-      "applicationTags": [
-        "hvac",
-        "refrigeration",
-        "chilled-water",
-        "process-piping",
-        "industrial"
-      ],
-      "features": [
-        "High Thermal Insulation",
-        "High Density & Load-Bearing Capacity",
-        "Moisture & Vapor Resistant",
-        "Prevents Condensation & Thermal Bridging",
-        "Long-term Durability & Fire Retardant"
-      ],
-      "specifications": [
-        {
-          "label": "15MM-1000MM , THICKNESS AS PER REQUIREMENT",
-          "value": "100/-"
-        }
-      ],
-      "options": [
-        "Contact EIC for available specifications."
-      ],
-      "relatedProducts": [
-        "puf-pipe-sections",
-        "puf-slabs-sheets",
-        "pir-pipe-sections",
-        "pir-pur-sheets"
-      ],
-      "searchKeywords": [
-        "PUF SUPPORT"
-      ],
-      "active": true,
-      "image": "/assets/img/products/puf-pipie-support.webp"
+      "id": "cladding-vapour-protection",
+      "name": "Cladding & Vapour Protection",
+      "description": "Metal cladding and foil facings that protect insulation from weather, moisture and mechanical damage."
     },
     {
-      "id": 22,
-      "code": "EIC-22",
-      "name": "",
-      "slug": "",
-      "category": "thermal-insulation",
-      "form": "pipe-section",
-      "material": "",
-      "shortDescription": "",
-      "description": "",
-      "applications": [],
-      "applicationSummary": "",
-      "applicationTags": [],
-      "features": [],
-      "specifications": [],
-      "options": [
-        "Contact EIC for available specifications."
-      ],
-      "relatedProducts": [],
-      "searchKeywords": [],
-      "active": true
+      "id": "installation-accessories",
+      "name": "Installation & Accessories",
+      "description": "Adhesives, tapes, wires, supports, fasteners and sealants used to install and finish insulation systems."
     }
   ]
 }
