@@ -56,7 +56,8 @@
     "aluminium-cladding-sheets",
     "aerogel-insulation",
     "insulation-fasteners-pins",
-    "puf-pipe-sections"
+    "puf-pipe-sections",
+    "puf-pipie-support"
   ],
   "products": [
     {
@@ -959,24 +960,55 @@
     {
       "id": 21,
       "code": "EIC-21",
-      "name": "",
-      "slug": "",
+      "name": "PUF PIPIE SUPPORT",
+      "slug": "puf-pipie-support",
       "category": "thermal-insulation",
       "form": "pipe-section",
-      "material": "",
-      "shortDescription": "",
-      "description": "",
-      "applications": [],
-      "applicationSummary": "",
-      "applicationTags": [],
-      "features": [],
-      "specifications": [],
+      "material": "polyurethane",
+      "shortDescription": "High-density PUF pipe support providing excellent thermal insulation, structural strength, moisture resistance, and long service life for insulated piping syste",
+      "description": "High-density Polyurethane Foam (PUF) Pipe Supports are engineered insulation and load-bearing components designed to support insulated piping while minimizing thermal bridging and heat transfer. They provide excellent compressive strength, low thermal conductivity, moisture resistance, dimensional stability, and long-term durability. PUF pipe supports are widely used in HVAC, chilled water, refrigeration, cold storage, and industrial piping systems.",
+      "applications": [
+        "HVAC Systems",
+        "Chilled Water Lines",
+        "Refrigeration Systems",
+        "Cold Storage Piping",
+        "Industrial Process Piping"
+      ],
+      "applicationSummary": "Used for supporting and insulating insulated piping systems, particularly in chilled water, HVAC, refrigeration, cold storage, and industrial applications. It helps prevent thermal bridging, heat gain/loss, condensation, and insulation damage while providing reliable mechanical support.",
+      "applicationTags": [
+        "hvac",
+        "refrigeration",
+        "chilled-water",
+        "process-piping",
+        "industrial"
+      ],
+      "features": [
+        "High Thermal Insulation",
+        "High Density & Load-Bearing Capacity",
+        "Moisture & Vapor Resistant",
+        "Prevents Condensation & Thermal Bridging",
+        "Long-term Durability & Fire Retardant"
+      ],
+      "specifications": [
+        {
+          "label": "15MM-1000MM , THICKNESS AS PER REQUIREMENT",
+          "value": "100/-"
+        }
+      ],
       "options": [
         "Contact EIC for available specifications."
       ],
-      "relatedProducts": [],
-      "searchKeywords": [],
-      "active": true
+      "relatedProducts": [
+        "puf-pipe-sections",
+        "puf-slabs-sheets",
+        "pir-pipe-sections",
+        "pir-pur-sheets"
+      ],
+      "searchKeywords": [
+        "PUF SUPPORT"
+      ],
+      "active": true,
+      "image": "/assets/img/products/puf-pipie-support.png"
     },
     {
       "id": 22,
