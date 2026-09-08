@@ -30,9 +30,14 @@ ${C.pageHero({ title: 'Products', intro: 'Industrial insulation materials and ac
     <div>
       <div class="results__bar"><span>Showing <strong id="results-count">${products.length}</strong> of ${products.length} products</span><button class="btn btn--outline btn--sm" type="button" data-quote="" data-intent="info">Not sure? Ask EIC</button></div>
       <div id="catalogue-list">
-        ${categories.map((c) => `<div class="cat-block" data-cat-block>
+        ${(function(){
+      const known = new Set(categories.map(c=>c.id));
+      const list = categories.slice();
+      if (products.some(p=>!known.has(p.category))) list.push({id:'__other',name:'Other products',description:''});
+      return list;
+    })().map((c) => `<div class="cat-block" data-cat-block>
           <div class="cat-block__head"><h3 id="${c.id}">${c.name}</h3><span>${c.description}</span></div>
-          <div class="grid grid--3">${products.filter((p) => p.category === c.id).map((p) => C.productCard(p)).join('')}</div>
+          <div class="grid grid--3">${products.filter((p) => c.id==='__other' ? !categories.some(k=>k.id===p.category) : p.category === c.id).map((p) => C.productCard(p)).join('')}</div>
         </div>`).join('')}
         <div class="empty" id="results-empty" hidden><h3>No products match that search</h3><p>Try a material name, an application, or reset the filters. If you can't find what you need, ask EIC directly.</p><div class="btn-row" style="justify-content:center"><button class="btn btn--gold" type="button" data-quote="" data-intent="info">Ask EIC about availability</button><a class="btn btn--outline" href="${C.waHref()}" target="_blank" rel="noopener" data-track="whatsapp_click" data-label="catalogue-empty">WhatsApp EIC</a></div></div>
       </div>
@@ -58,7 +63,7 @@ ${C.finalCta()}`;
 }
 
 function detail(p) {
-  const cat = categories.find((c) => c.id === p.category);
+  const cat = categories.find((c) => c.id === p.category) || { id: p.category || 'other', name: C.catName(p.category) || 'Products' };
   const related = p.relatedProducts.map((s) => bySlug[s]).filter(Boolean);
   const faqs = faqForProduct(p);
   const spec = p.specifications.length
