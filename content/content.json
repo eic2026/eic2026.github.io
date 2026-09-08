@@ -90,7 +90,7 @@
       ],
       "specifications": [],
       "options": [
-        "Available pipe sizes, wall thicknesses and lengths \u2014 Contact EIC for available specifications."
+        "Available pipe sizes, wall thicknesses and lengths — Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "pir-pipe-sections",
@@ -136,7 +136,7 @@
       ],
       "specifications": [],
       "options": [
-        "Available sheet sizes and thicknesses \u2014 Contact EIC for available specifications."
+        "Available sheet sizes and thicknesses — Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "pir-pur-sheets",
@@ -181,7 +181,7 @@
       ],
       "specifications": [],
       "options": [
-        "Available pipe sizes and thicknesses \u2014 Contact EIC for available specifications."
+        "Available pipe sizes and thicknesses — Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "puf-pipe-sections",
@@ -226,7 +226,7 @@
       ],
       "specifications": [],
       "options": [
-        "Grades, sheet sizes and thicknesses \u2014 Contact EIC for available specifications."
+        "Grades, sheet sizes and thicknesses — Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "puf-slabs-sheets",
@@ -270,7 +270,7 @@
       ],
       "specifications": [],
       "options": [
-        "Available pipe sizes, densities and thicknesses \u2014 Contact EIC for available specifications."
+        "Available pipe sizes, densities and thicknesses — Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "rockwool-slabs",
@@ -317,7 +317,7 @@
       ],
       "specifications": [],
       "options": [
-        "Available slab sizes, densities and thicknesses \u2014 Contact EIC for available specifications."
+        "Available slab sizes, densities and thicknesses — Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "rockwool-pipe-sections",
@@ -360,7 +360,7 @@
       ],
       "specifications": [],
       "options": [
-        "Roll sizes, thicknesses and facings \u2014 Contact EIC for available specifications."
+        "Roll sizes, thicknesses and facings — Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "glass-wool-pipe-sections",
@@ -404,7 +404,7 @@
       ],
       "specifications": [],
       "options": [
-        "Pipe sizes, thicknesses and facings \u2014 Contact EIC for available specifications."
+        "Pipe sizes, thicknesses and facings — Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "glass-wool-rolls",
@@ -446,7 +446,7 @@
       ],
       "specifications": [],
       "options": [
-        "Tube sizes, sheet sizes and thicknesses \u2014 Contact EIC for available specifications."
+        "Tube sizes, sheet sizes and thicknesses — Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "xlpe-insulation",
@@ -491,7 +491,7 @@
       ],
       "specifications": [],
       "options": [
-        "Sizes, thicknesses and facings \u2014 Contact EIC for available specifications."
+        "Sizes, thicknesses and facings — Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "nbr-epdm-rubber-insulation",
@@ -536,7 +536,7 @@
       ],
       "specifications": [],
       "options": [
-        "Blanket thicknesses and roll sizes \u2014 Contact EIC for available specifications."
+        "Blanket thicknesses and roll sizes — Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "rockwool-pipe-sections",
@@ -580,7 +580,7 @@
       ],
       "specifications": [],
       "options": [
-        "Sheet gauges, sizes and finishes \u2014 Contact EIC for available specifications."
+        "Sheet gauges, sizes and finishes — Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "gi-cladding-sheets",
@@ -625,7 +625,7 @@
       ],
       "specifications": [],
       "options": [
-        "Foil thicknesses, widths and reinforcement \u2014 Contact EIC for available specifications."
+        "Foil thicknesses, widths and reinforcement — Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "insulation-tape",
@@ -670,7 +670,7 @@
       ],
       "specifications": [],
       "options": [
-        "Sheet gauges and sizes \u2014 Contact EIC for available specifications."
+        "Sheet gauges and sizes — Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "aluminium-cladding-sheets",
@@ -715,7 +715,7 @@
       ],
       "specifications": [],
       "options": [
-        "Adhesive types and pack sizes \u2014 Contact EIC for available specifications."
+        "Adhesive types and pack sizes — Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "nbr-epdm-rubber-insulation",
@@ -760,7 +760,7 @@
       ],
       "specifications": [],
       "options": [
-        "Tape types, widths and roll lengths \u2014 Contact EIC for available specifications."
+        "Tape types, widths and roll lengths — Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "aluminium-foil",
@@ -805,7 +805,7 @@
       ],
       "specifications": [],
       "options": [
-        "Wire grades, gauges and coil weights \u2014 Contact EIC for available specifications."
+        "Wire grades, gauges and coil weights — Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "rockwool-pipe-sections",
@@ -850,7 +850,7 @@
       ],
       "specifications": [],
       "options": [
-        "Pipe sizes, insert lengths and thicknesses \u2014 Contact EIC for available specifications."
+        "Pipe sizes, insert lengths and thicknesses — Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "puf-pipe-sections",
@@ -895,7 +895,7 @@
       ],
       "specifications": [],
       "options": [
-        "Pin types, lengths and washer sizes \u2014 Contact EIC for available specifications."
+        "Pin types, lengths and washer sizes — Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "rockwool-slabs",
@@ -940,7 +940,7 @@
       ],
       "specifications": [],
       "options": [
-        "Sealant types and pack sizes \u2014 Contact EIC for available specifications."
+        "Sealant types and pack sizes — Contact EIC for available specifications."
       ],
       "relatedProducts": [
         "aluminium-cladding-sheets",
@@ -972,6 +972,11 @@
       "id": "installation-accessories",
       "name": "Installation & Accessories",
       "description": "Adhesives, tapes, wires, supports, fasteners and sealants used to install and finish insulation systems."
+    },
+    {
+      "id": "new-category",
+      "name": "PIPE SUPPORT",
+      "description": ""
     }
   ]
 }
