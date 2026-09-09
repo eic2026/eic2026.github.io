@@ -58,7 +58,8 @@
     "aluminium-cladding-sheets",
     "aerogel-insulation",
     "insulation-fasteners-pins",
-    "puf-pipe-support"
+    "puf-pipe-support",
+    "nitrile-coat-pipe-support"
   ],
   "products": [
     {
@@ -1006,6 +1007,87 @@
       ],
       "active": true,
       "image": "/assets/img/products/puf-pipe-support.webp"
+    },
+    {
+      "id": 22,
+      "code": "EIC-22",
+      "name": "NITRILE COAT  PIPE SUPPORT",
+      "slug": "nitrile-coat-pipe-support",
+      "category": "thermal-insulation",
+      "form": "accessory",
+      "material": "",
+      "shortDescription": "PUF Pipe Supports with 5 mm Nitrile Coating are engineered to provide strong, stable and reliable support for insulated piping systems.",
+      "description": "The high-density PUF (Polyurethane Foam) core provides excellent load-bearing and insulation support, while the 5 mm thick Nitrile rubber coating offers enhanced protection against moisture, oil, chemicals, abrasion and harsh industrial conditions.",
+      "applications": [
+        "HVAC & Chilled Water Systems",
+        "Refrigeration & Cold Insulation",
+        "Oil & Gas Pipelines",
+        "Chemical & Process Industries",
+        "Petrochemical Plants",
+        "Power Plants",
+        "Industrial Utility Piping",
+        "Steam & Hot Water Pipelines",
+        "Fire Fighting & Water Piping",
+        "Pipe Racks & Structural Supports"
+      ],
+      "applicationSummary": "PUF Pipe Supports with 5 mm Nitrile Coating are primarily used for supporting and protecting insulated pipes in industrial piping systems.",
+      "applicationTags": [
+        "hvac",
+        "refrigeration",
+        "chilled-water",
+        "process-piping",
+        "ducting",
+        "industrial"
+      ],
+      "features": [
+        "High-Density PUF Support",
+        "5 mm Nitrile Rubber Coating",
+        "Excellent Load-Bearing Capacity",
+        "Oil & Chemical Resistant",
+        "Moisture & Abrasion Resistant",
+        "Vibration Reduction",
+        "Protects Pipe Insulation",
+        "Long Service Life",
+        "Suitable for Industrial Piping Systems"
+      ],
+      "specifications": [],
+      "options": [
+        "Contact EIC for available specifications."
+      ],
+      "relatedProducts": [
+        "puf-pipe-sections",
+        "puf-slabs-sheets",
+        "pir-pipe-sections",
+        "pir-pur-sheets",
+        "pipe-support-inserts",
+        "puf-pipe-support"
+      ],
+      "searchKeywords": [
+        "PUF Pipe Support",
+        "PUF Pipe Supports",
+        "Polyurethane Foam Pipe Support",
+        "Nitrile Coated Pipe Support",
+        "5 mm Nitrile Coated PUF Support",
+        "Insulated Pipe Support",
+        "Nitrile Rubber Pipe Support",
+        "HVAC Pipe Support",
+        "Chilled Water Pipe Support",
+        "Refrigeration Pipe Support",
+        "Industrial Pipe Support",
+        "Chemical Plant Pipe Support",
+        "Oil & Gas Pipe Support",
+        "Pipeline Support",
+        "Pipe Rack Support",
+        "Insulated Pipeline Support",
+        "Thermal Insulation Pipe Support",
+        "High Density PUF Support",
+        "Anti-Vibration Pipe Support",
+        "Chemical Resistant Pipe Support",
+        "Oil Resistant Pipe Support",
+        "Industrial Piping Support."
+      ],
+      "active": true,
+      "image": "/assets/img/products/nitrile-coat-pipe-support.webp"
     }
   ],
   "categories": [
