@@ -59,7 +59,8 @@
     "insulation-fasteners-pins",
     "puf-pipe-support",
     "nitrile-coat-pipe-support",
-    "rockwool-pipe-sections"
+    "rockwool-pipe-sections",
+    "wooden-pipe-support"
   ],
   "products": [
     {
@@ -1089,6 +1090,65 @@
       ],
       "active": true,
       "image": "/assets/img/products/nitrile-coat-pipe-support.webp"
+    },
+    {
+      "id": 23,
+      "code": "EIC-23",
+      "name": "WOODEN PIPE SUPPORT",
+      "slug": "wooden-pipe-support",
+      "category": "thermal-insulation",
+      "form": "accessory",
+      "material": "WOOD",
+      "shortDescription": "\"Durable wooden blocks designed to support insulated pipes at hanger points, preventing compression and ensuring long-lasting protection for piping systems up t",
+      "description": "\"Durable wooden blocks designed to support insulated pipes at hanger points, preventing compression and ensuring long-lasting protection for piping systems up to 200°F.\"",
+      "applications": [
+        "Industrial piping systems",
+        "HVAC insulation support",
+        "Commercial building plumbing",
+        "Rooftop pipe installations (though alternatives like EPDM rubber are sometimes preferred here due to weather exposure)"
+      ],
+      "applicationSummary": "Provides sturdy support to insulated pipes at hanger points, preventing insulation compression and damage.",
+      "applicationTags": [
+        "hvac",
+        "refrigeration",
+        "chilled-water",
+        "hot-water",
+        "process-piping",
+        "ducting",
+        "industrial"
+      ],
+      "features": [
+        "Material: Made from high-quality pine or hardwood (oak) for strength and durability",
+        "Design: Available in rectangular and dowel shapes to fit various pipe sizes",
+        "Temperature Rating: Suitable for piping systems operating at ambient to 200°F",
+        "Precision-Cut: Manufactured to exact sizes for accurate, snug fitment",
+        "Application: Used at clevis hanger support points on insulated pipework"
+      ],
+      "specifications": [],
+      "options": [
+        "Contact EIC for available specifications."
+      ],
+      "relatedProducts": [
+        "puf-pipe-sections",
+        "puf-slabs-sheets",
+        "pir-pipe-sections",
+        "pir-pur-sheets",
+        "rockwool-pipe-sections",
+        "rockwool-slabs",
+        "nbr-epdm-rubber-insulation",
+        "xlpe-insulation",
+        "aerogel-insulation",
+        "aluminium-cladding-sheets",
+        "insulation-tape",
+        "ss-gi-binding-wire",
+        "pipe-support-inserts",
+        "insulation-fasteners-pins"
+      ],
+      "searchKeywords": [
+        "Buy wooden pipe support online Wooden pipe support supplier Wooden pipe support price Wholesale wood pipe blocks Pipe support blocks Insulation pipe hanger support Wood support for insulated pipes Pipe insulation saddle support Clevis hanger wood block FSC certified hardwood blocks Industrial pipe wood support HVAC pipe support block Insulated piping support Wooden pipe support Wood block pipe support Pipe insulation wood block Hardwood pipe support blocks"
+      ],
+      "active": true,
+      "image": "/assets/img/products/wooden-pipe-support.png"
     }
   ],
   "categories": [
