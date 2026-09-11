@@ -1149,6 +1149,89 @@
       ],
       "active": true,
       "image": "/assets/img/products/wooden-pipe-support.png"
+    },
+    {
+      "id": 24,
+      "code": "EIC-24",
+      "name": "PUF PANEL",
+      "slug": "puf-panel",
+      "category": "thermal-insulation",
+      "form": "sheet",
+      "material": "polyurethane",
+      "shortDescription": "Insulated sandwich panels with a polyurethane foam core, offering excellent thermal insulation for cold storage, industrial, and prefabricated structures",
+      "description": "PUF (Polyurethane Foam) Panels are high-performance insulated sandwich panels consisting of a rigid polyurethane foam core bonded between two outer metal sheets (typically pre-painted or galvanized steel). This composite structure delivers exceptional thermal insulation while maintaining structural strength, making it an ideal solution for temperature-controlled environments.",
+      "applications": [
+        "Cold storage and refrigeration units",
+        "Industrial buildings (warehouses, factories, workshops)",
+        "Prefabricated structures (modular homes, portable cabins, site offices)",
+        "Roofing and wall cladding for commercial/residential buildings",
+        "Clean rooms and laboratories requiring controlled environments"
+      ],
+      "applicationSummary": "PUF Panels are primarily used for thermal insulation in cold storage and industrial buildings to maintain controlled temperatures.",
+      "applicationTags": [
+        "hvac",
+        "refrigeration",
+        "chilled-water",
+        "hot-water",
+        "process-piping",
+        "equipment",
+        "ducting",
+        "industrial"
+      ],
+      "features": [
+        "Core Material: Rigid polyurethane foam with high thermal resistance (R-value)",
+        "Outer Layers: Pre-painted or galvanized steel/aluminum sheets for durability and finish",
+        "Density: Approx. 35-45 kg/m³",
+        "Thickness Range: 30mm to 150mm (application-dependent)",
+        "Width: Typically 1000-1200mm",
+        "Length: Customizable up to 12 meters",
+        "Fire Rating: Compliant with IS 13501 or equivalent standards"
+      ],
+      "specifications": [],
+      "options": [
+        "Contact EIC for available specifications."
+      ],
+      "relatedProducts": [
+        "puf-pipe-sections",
+        "puf-slabs-sheets",
+        "pir-pipe-sections",
+        "pir-pur-sheets",
+        "rockwool-pipe-sections",
+        "rockwool-slabs",
+        "glass-wool-rolls",
+        "glass-wool-pipe-sections",
+        "nbr-epdm-rubber-insulation",
+        "aerogel-insulation",
+        "aluminium-cladding-sheets",
+        "gi-cladding-sheets",
+        "pipe-support-inserts",
+        "puf-pipe-support",
+        "nitrile-coat-pipe-support"
+      ],
+      "searchKeywords": [
+        "PUF panel",
+        "PUF sandwich panel",
+        "polyurethane foam panel",
+        "PUF insulated panel",
+        "PUF wall panel",
+        "PUF roofing panel",
+        "cold storage PUF panel",
+        "insulated sandwich panel",
+        "PUF panel manufacturer",
+        "PUF panel supplier",
+        "cam-lock PUF panel",
+        "PUF panel for warehouse",
+        "thermal insulation panel",
+        "prefab PUF panel",
+        "PUF panel roofing sheet",
+        "steel PUF panel",
+        "PUF panel price list",
+        "PUF panel wholesale supplier",
+        "fire resistant PUF panel IS 13501",
+        "galvanized steel PUF panel"
+      ],
+      "active": false,
+      "image": "/assets/img/products/puf-panel.webp"
     }
   ],
   "categories": [
