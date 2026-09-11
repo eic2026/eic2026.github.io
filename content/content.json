@@ -52,14 +52,14 @@
   "featuredSlugs": [
     "puf-pipe-sections",
     "pir-pipe-sections",
-    "rockwool-pipe-sections",
     "nbr-epdm-rubber-insulation",
     "xlpe-insulation",
     "aluminium-cladding-sheets",
     "aerogel-insulation",
     "insulation-fasteners-pins",
     "puf-pipe-support",
-    "nitrile-coat-pipe-support"
+    "nitrile-coat-pipe-support",
+    "rockwool-pipe-sections"
   ],
   "products": [
     {
@@ -276,10 +276,10 @@
         "Available pipe sizes, densities and thicknesses — Contact EIC for available specifications."
       ],
       "relatedProducts": [
-        "rockwool-slabs",
         "pir-pipe-sections",
-        "ss-gi-binding-wire",
-        "gi-cladding-sheets"
+        "rockwool-slabs",
+        "gi-cladding-sheets",
+        "ss-gi-binding-wire"
       ],
       "searchKeywords": [
         "mineral wool",
@@ -287,7 +287,8 @@
         "rock wool",
         "steam pipe insulation"
       ],
-      "image": "/assets/img/products/puf-pipie-support.webp"
+      "image": "/assets/img/products/rockwool-pipe-sections.webp",
+      "active": true
     },
     {
       "id": 6,
