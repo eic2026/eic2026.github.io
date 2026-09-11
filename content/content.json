@@ -60,7 +60,8 @@
     "puf-pipe-support",
     "nitrile-coat-pipe-support",
     "rockwool-pipe-sections",
-    "wooden-pipe-support"
+    "wooden-pipe-support",
+    "puf-panel"
   ],
   "products": [
     {
@@ -1230,7 +1231,7 @@
         "fire resistant PUF panel IS 13501",
         "galvanized steel PUF panel"
       ],
-      "active": false,
+      "active": true,
       "image": "/assets/img/products/puf-panel.webp"
     }
   ],
