@@ -61,7 +61,8 @@
     "nitrile-coat-pipe-support",
     "rockwool-pipe-sections",
     "wooden-pipe-support",
-    "puf-panel"
+    "puf-panel",
+    "u-clamp"
   ],
   "products": [
     {
@@ -1233,6 +1234,79 @@
       ],
       "active": true,
       "image": "/assets/img/products/puf-panel.webp"
+    },
+    {
+      "id": 25,
+      "code": "EIC-25",
+      "name": "U CLAMP",
+      "slug": "u-clamp",
+      "category": "thermal-insulation",
+      "form": "accessory",
+      "material": "Galvanized Steel / GI",
+      "shortDescription": "Heavy-duty GI U Clamp designed for secure and reliable pipe fastening and support.",
+      "description": "EIC U Clamps are manufactured from galvanized steel for strength, durability, and corrosion resistance. They provide firm pipe holding and are suitable for industrial piping, HVAC, insulation, and support applications.",
+      "applications": [
+        "Industrial piping support",
+        "HVAC & refrigeration systems",
+        "Insulation support assemblies",
+        "Pipe fastening and clamping",
+        "Commercial & infrastructure projects"
+      ],
+      "applicationSummary": "PIPE SUPPORT",
+      "applicationTags": [
+        "hvac",
+        "refrigeration",
+        "chilled-water",
+        "hot-water",
+        "equipment",
+        "ducting",
+        "industrial"
+      ],
+      "features": [
+        "GI U Clamp, Galvanized Steel U Clamp, Pipe Clamp, U-Bolt Clamp, Heavy Duty Pipe Support, Industrial Pipe Fittings, HVAC Pipe Support, Corrosion Resistant Clamp, EIC U Clamp, Pipe Fastening Solutions."
+      ],
+      "specifications": [],
+      "options": [
+        "Contact EIC for available specifications."
+      ],
+      "relatedProducts": [
+        "puf-pipe-sections",
+        "puf-slabs-sheets",
+        "pir-pipe-sections",
+        "pir-pur-sheets",
+        "rockwool-pipe-sections",
+        "rockwool-slabs",
+        "glass-wool-rolls",
+        "glass-wool-pipe-sections",
+        "xlpe-insulation",
+        "aluminium-cladding-sheets",
+        "puf-pipe-support",
+        "nitrile-coat-pipe-support",
+        "wooden-pipe-support"
+      ],
+      "searchKeywords": [
+        "U Clamp",
+        "GI U Clamp",
+        "Galvanized U Clamp",
+        "Pipe U Clamp",
+        "U Bolt Clamp",
+        "Pipe Clamp",
+        "GI Pipe Clamp",
+        "MS U Clamp",
+        "Heavy Duty Pipe Clamp",
+        "Industrial Pipe Clamp",
+        "HVAC Pipe Clamp",
+        "Pipe Support Clamp",
+        "Insulation Pipe Clamp",
+        "Steel U Clamp",
+        "U Clamp Manufacturer",
+        "U Clamp Supplier",
+        "Pipe Support Hardware",
+        "Industrial Pipe Support",
+        "EIC U Clamp."
+      ],
+      "active": true,
+      "image": "/assets/img/products/u-clamp.webp"
     }
   ],
   "categories": [
