@@ -1317,6 +1317,72 @@
       ],
       "active": true,
       "image": "/assets/img/products/u-clamp.webp"
+    },
+    {
+      "id": 26,
+      "code": "EIC-26",
+      "name": "PUF SHEET",
+      "slug": "puf-sheet",
+      "category": "thermal-insulation",
+      "form": "sheet",
+      "material": "polyurethane",
+      "shortDescription": "PUF (Polyurethane Foam) Boards / Sheets",
+      "description": "PUF Sheets are manufactured from high-density rigid polyurethane foam, offering excellent thermal insulation properties. These lightweight, durable, and easy-to-install boards are widely used across insulation, packaging, and construction industries. The image shown displays a plain (unfaced) foam core, which can be used directly or supplied with metal/laminate facing as required.",
+      "applications": [
+        "Cold storage and refrigeration units",
+        "Prefabricated buildings and site cabins",
+        "Roofing and wall panels",
+        "Packaging and transport insulation",
+        "Clean rooms, dairy, and poultry farms",
+        "False ceiling and partition systems"
+      ],
+      "applicationSummary": "",
+      "applicationTags": [
+        "hvac",
+        "refrigeration",
+        "chilled-water",
+        "hot-water",
+        "process-piping",
+        "equipment",
+        "ducting",
+        "industrial"
+      ],
+      "features": [
+        "✅ Superior thermal insulation",
+        "✅ Lightweight with high strength-to-weight ratio",
+        "✅ Moisture and weather resistant",
+        "✅ Easy to cut, shape, and install",
+        "✅ Long service life, non-degradable",
+        "✅ Good sound insulation properties"
+      ],
+      "specifications": [],
+      "options": [
+        "Contact EIC for available specifications."
+      ],
+      "relatedProducts": [
+        "puf-pipe-sections",
+        "puf-slabs-sheets",
+        "pir-pipe-sections",
+        "pir-pur-sheets",
+        "rockwool-pipe-sections",
+        "rockwool-slabs",
+        "glass-wool-rolls",
+        "xlpe-insulation",
+        "aerogel-insulation",
+        "aluminium-foil",
+        "gi-cladding-sheets",
+        "insulation-tape",
+        "ss-gi-binding-wire",
+        "insulation-fasteners-pins",
+        "puf-pipe-support",
+        "puf-panel",
+        "u-clamp"
+      ],
+      "searchKeywords": [
+        "PUF sheet PUF panel Polyurethane foam sheet PUF insulation sheet PUF board PUF shee t manufacturer PUF sheet supplier PUF sheet price PUF sheet for roofing PUF sheet for cold storage PUF panel price list Rigid polyurethane foam board Thermal insulation sheet Insulated PUF panel Fire retardant PUF sheet  PUF sheet for cold room construction PUF insulated roofing sheet price PUF sandwich panel manufacturer PUF panel for prefab building PUF sheet with GI facing PUF sheet 50mm thickness price Best PUF sheet for insulation PUF panel for poultry farm PUF sheet wholesale supplier"
+      ],
+      "active": true,
+      "image": "/assets/img/products/puf-sheet.webp"
     }
   ],
   "categories": [
