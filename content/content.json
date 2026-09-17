@@ -60,7 +60,6 @@
     ]
   },
   "featuredSlugs": [
-    "puf-pipe-sections",
     "pir-pipe-sections",
     "nbr-epdm-rubber-insulation",
     "xlpe-insulation",
@@ -72,7 +71,8 @@
     "rockwool-pipe-sections",
     "wooden-pipe-support",
     "puf-panel",
-    "u-clamp"
+    "u-clamp",
+    "puf-pipe-sections"
   ],
   "products": [
     {
@@ -92,10 +92,10 @@
       ],
       "applicationSummary": "Chilled/hot water and process piping",
       "applicationTags": [
+        "hvac",
         "chilled-water",
         "hot-water",
         "process-piping",
-        "hvac",
         "industrial"
       ],
       "features": [
@@ -120,7 +120,9 @@
         "pipe insulation",
         "preformed",
         "half shell"
-      ]
+      ],
+      "active": true,
+      "image": "/assets/img/products/puf-pipe-sections.webp"
     },
     {
       "id": 2,
