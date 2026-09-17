@@ -38,14 +38,14 @@
         "caption": "Chilled water & refrigeration lines"
       },
       {
+        "slug": "puf-sheet",
+        "badge": "Available to order",
+        "caption": "Weather protection over insulation"
+      },
+      {
         "slug": "u-clamp",
         "badge": "Available to order",
         "caption": "Chilled/hot water and process piping"
-      },
-      {
-        "slug": "aluminium-cladding-sheets",
-        "badge": "Available to order",
-        "caption": "Weather protection over insulation"
       },
       {
         "slug": "puf-pipe-sections",
@@ -53,7 +53,7 @@
         "caption": "Chilled/hot water and process piping"
       },
       {
-        "slug": "xlpe-insulation",
+        "slug": "rockwool-pipe-sections",
         "badge": "Available to order",
         "caption": "Chilled/hot water and process piping"
       }
