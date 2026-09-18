@@ -72,7 +72,8 @@
     "wooden-pipe-support",
     "puf-panel",
     "u-clamp",
-    "puf-pipe-sections"
+    "puf-pipe-sections",
+    "aluminium-bubble-sheet"
   ],
   "products": [
     {
@@ -1385,6 +1386,70 @@
       ],
       "active": true,
       "image": "/assets/img/products/puf-sheet.webp"
+    },
+    {
+      "id": 27,
+      "code": "EIC-27",
+      "name": "Aluminium Bubble Sheet",
+      "slug": "aluminium-bubble-sheet",
+      "category": "thermal-insulation",
+      "form": "pipe-section",
+      "material": "Aluminium",
+      "shortDescription": "Aluminium Bubble Sheet is a lightweight, flexible insulation material made by combining air-bubble film with a reflective aluminium foil layer on one or both si",
+      "description": "Aluminium Bubble Sheet is a multi-layer insulation material made by sandwiching a layer of air-bubble film between two (or one) layers of reflective aluminium foil. This combination gives it dual insulation properties — the aluminium foil reflects radiant heat, while the trapped air bubbles provide thermal resistance (conductive/convective insulation). It is lightweight, flexible, waterproof, and easy to install, making it a popular choice for both residential and industrial insulation needs.",
+      "applications": [
+        "Roof insulation (metal sheds, warehouses, factories)",
+        "Wall & ceiling insulation",
+        "HVAC ducting insulation",
+        "Cold storage & container insulation",
+        "Under-deck insulation for terraces"
+      ],
+      "applicationSummary": "The main purpose of Aluminium Bubble Sheet is heat insulation and radiant heat reflection in roofing, walls, and ducting systems — helping to keep interiors cooler in summer and reduce heat loss in winter.",
+      "applicationTags": [
+        "hvac",
+        "refrigeration",
+        "chilled-water",
+        "hot-water",
+        "process-piping",
+        "equipment",
+        "ducting",
+        "industrial"
+      ],
+      "features": [
+        "Reflects up to 97% of radiant heat",
+        "Lightweight, flexible & easy to install",
+        "Waterproof & moisture resistant",
+        "Good sound insulation properties",
+        "Durable and long-lasting",
+        "Fire retardant grades available"
+      ],
+      "specifications": [],
+      "options": [
+        "Contact EIC for available specifications."
+      ],
+      "relatedProducts": [
+        "puf-pipe-sections",
+        "puf-slabs-sheets",
+        "pir-pipe-sections",
+        "pir-pur-sheets",
+        "xlpe-insulation",
+        "aerogel-insulation",
+        "aluminium-cladding-sheets",
+        "gi-cladding-sheets",
+        "insulation-adhesive",
+        "insulation-tape",
+        "ss-gi-binding-wire",
+        "puf-pipe-support",
+        "nitrile-coat-pipe-support",
+        "puf-panel",
+        "u-clamp",
+        "puf-sheet"
+      ],
+      "searchKeywords": [
+        "Aluminium bubble sheet Aluminium bubble insulation Bubble foil insulation sheet ReflectiveWhat is aluminium bubble insulation used for Best insulation sheet for metal roof Aluminium bubble sheet vs PUF sheet How to install bubble foil insulation Aluminium bubble sheet price per roll Benefits of radiant barrier insulation Aluminium bubble insulation for warehouse Aluminium bubble sheet supplier in [City] Bubble insulation dealer near me Aluminium bubble sheet manufacturer in India Roof insulation sheet for factory Ducting insulation sheet Cold storage insulation roll Under-deck heat insulation Water tank insulation sheet  /aluminium-bubble-sheet /aluminium-bubble-insulation /bubble-foil-insulation-price /aluminium-bubble-sheet-for-roofing Aluminium bubble sheet price Roof insulation sheet Radiant barrier insulation Thermal insulation roll Aluminium foil bubble insulation Bubble insulation for roofing Heat reflective insulation sheet Aluminium bubble sheet for shed roofing insulation sheet Aluminium bubble wrap insulation Heat insulation sheet Aluminium bubble sheet manufacturer Aluminium bubble sheet supplier"
+      ],
+      "active": true,
+      "image": "/assets/img/products/aluminium-bubble-sheet.webp"
     }
   ],
   "categories": [
