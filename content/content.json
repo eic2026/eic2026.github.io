@@ -147,10 +147,10 @@
       ],
       "applicationSummary": "Equipment, tanks and duct insulation",
       "applicationTags": [
+        "chilled-water",
         "equipment",
         "ducting",
-        "industrial",
-        "chilled-water"
+        "industrial"
       ],
       "features": [
         "Flat rigid boards, easy to cut on site",
@@ -163,17 +163,19 @@
         "Available sheet sizes and thicknesses — Contact EIC for available specifications."
       ],
       "relatedProducts": [
-        "pir-pur-sheets",
         "puf-pipe-sections",
-        "insulation-fasteners-pins",
-        "insulation-adhesive"
+        "pir-pur-sheets",
+        "insulation-adhesive",
+        "insulation-fasteners-pins"
       ],
       "searchKeywords": [
         "polyurethane board",
         "PU sheet",
         "foam slab",
         "tank insulation"
-      ]
+      ],
+      "active": true,
+      "image": "/assets/img/products/puf-slabs-sheets.webp"
     },
     {
       "id": 3,
