@@ -359,50 +359,6 @@
       ]
     },
     {
-      "id": 7,
-      "code": "EIC-07",
-      "name": "Glass Wool Rolls",
-      "slug": "glass-wool-rolls",
-      "category": "thermal-insulation",
-      "form": "roll",
-      "material": "Glass wool",
-      "shortDescription": "Flexible glass wool rolls for HVAC ducts and buildings.",
-      "description": "Glass wool rolls are flexible fibrous insulation supplied in roll form, commonly used for HVAC duct wrapping and building thermal and acoustic insulation. Rolls are wrapped around ducts, fixed with pins or adhesive, and the joints sealed with foil tape to complete the vapour barrier.",
-      "applications": [
-        "HVAC duct insulation",
-        "Building insulation",
-        "Acoustic insulation"
-      ],
-      "applicationSummary": "HVAC ducts and buildings",
-      "applicationTags": [
-        "hvac",
-        "ducting",
-        "equipment"
-      ],
-      "features": [
-        "Flexible roll format",
-        "Wraps easily around ducts",
-        "Available with foil facing",
-        "Sealed with foil tape"
-      ],
-      "specifications": [],
-      "options": [
-        "Roll sizes, thicknesses and facings — Contact EIC for available specifications."
-      ],
-      "relatedProducts": [
-        "glass-wool-pipe-sections",
-        "aluminium-foil",
-        "insulation-tape",
-        "insulation-fasteners-pins"
-      ],
-      "searchKeywords": [
-        "fibreglass",
-        "fiberglass",
-        "duct wrap",
-        "glasswool"
-      ]
-    },
-    {
       "id": 8,
       "code": "EIC-08",
       "name": "Glass Wool Pipe Sections",
@@ -434,7 +390,6 @@
         "Pipe sizes, thicknesses and facings — Contact EIC for available specifications."
       ],
       "relatedProducts": [
-        "glass-wool-rolls",
         "nbr-epdm-rubber-insulation",
         "insulation-tape",
         "aluminium-cladding-sheets"
@@ -656,7 +611,6 @@
       ],
       "relatedProducts": [
         "insulation-tape",
-        "glass-wool-rolls",
         "xlpe-insulation",
         "aluminium-cladding-sheets"
       ],
@@ -791,7 +745,6 @@
       ],
       "relatedProducts": [
         "aluminium-foil",
-        "glass-wool-rolls",
         "nbr-epdm-rubber-insulation",
         "insulation-adhesive"
       ],
@@ -926,7 +879,6 @@
       ],
       "relatedProducts": [
         "rockwool-slabs",
-        "glass-wool-rolls",
         "puf-slabs-sheets",
         "insulation-tape"
       ],
@@ -1220,7 +1172,6 @@
         "pir-pur-sheets",
         "rockwool-pipe-sections",
         "rockwool-slabs",
-        "glass-wool-rolls",
         "glass-wool-pipe-sections",
         "nbr-epdm-rubber-insulation",
         "aerogel-insulation",
@@ -1296,7 +1247,6 @@
         "pir-pur-sheets",
         "rockwool-pipe-sections",
         "rockwool-slabs",
-        "glass-wool-rolls",
         "glass-wool-pipe-sections",
         "xlpe-insulation",
         "aluminium-cladding-sheets",
@@ -1376,7 +1326,6 @@
         "pir-pur-sheets",
         "rockwool-pipe-sections",
         "rockwool-slabs",
-        "glass-wool-rolls",
         "xlpe-insulation",
         "aerogel-insulation",
         "aluminium-foil",
