@@ -107,7 +107,7 @@ module.exports = function home() {
 <section class="section section--ivory"><div class="container">
   <div class="sec-head"><h2>Solutions for every industry</h2><p>Materials for the piping, equipment and HVAC systems found across these sectors.</p></div>
   <div class="ind-grid">
-    ${industries.map((ind) => `<div class="ind-card"><h3>${ind.name}</h3><p>${ind.description}</p><ul>${ind.products.slice(0, 3).map((s) => `<li><a href="${bySlug[s].url}">${bySlug[s].name}</a></li>`).join('')}</ul></div>`).join('')}
+    ${industries.map((ind) => `<div class="ind-card"><h3>${ind.name}</h3><p>${ind.description}</p><ul>${ind.products.slice(0, 3).map((s) => bySlug[s] ? `<li><a href="${bySlug[s].url}">${bySlug[s].name}</a></li>` : '').join('')}</ul></div>`).join('')}
   </div>
 </div></section>
 
