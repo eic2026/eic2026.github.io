@@ -50,4 +50,11 @@ const featuredSlugs = (content.featuredSlugs || []).filter((s) => bySlug[s]);
 const hero = content.hero || {};
 hero.slides = (hero.slides || []).filter((s) => bySlug[s.slug]);
 
+// Drop references to products that were deleted/hidden in the admin, so no page or PDF can crash on them.
+// Mutates the shared taxonomy arrays in place, so templates that require('./taxonomy') directly get the cleaned lists too.
+const keep = (arr) => { if (Array.isArray(arr)) { const ok = arr.filter((s) => bySlug[s]); arr.splice(0, arr.length, ...ok); } };
+(taxonomyBase.industries || []).forEach((i) => keep(i.products));
+(taxonomyBase.applications || []).forEach((a) => keep(a.recommended));
+products.forEach((p) => keep(p.relatedProducts));
+
 module.exports = { site, products, bySlug, featuredSlugs, hero, taxonomy, SPEC_NOTICE, raw: content };
