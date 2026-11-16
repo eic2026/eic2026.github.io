@@ -162,7 +162,7 @@ for p in P:
 # 3. Material selection guide
 story = [PageBreak(), Paragraph('Material selection guide', st['h1']), Paragraph('The material types commonly used for each application. This is a starting point — contact EIC for product-specific recommendations and available specifications.', st['muted']), Spacer(1, 8)]
 for a in TAX['applications']:
-    names = [next(x['name'] for x in P if x['slug'] == s) for s in a['recommended']]
+    names = [n for n in (next((x['name'] for x in P if x['slug'] == s), None) for s in a['recommended']) if n]
     story.append(KeepTogether([Paragraph(a['name'], st['h2']), Paragraph(f"<b>{a['heading']}.</b> {a['description']}", st['body'])] + bullets(names)))
 story += [Spacer(1, 12), contact_block()]
 build(os.path.join(OUT, 'eic-material-selection-guide.pdf'), story, ['Material', 'Selection Guide'], 'Which insulation material for which application', 'EIC Material Selection Guide')
