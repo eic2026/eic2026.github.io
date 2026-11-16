@@ -50,7 +50,7 @@ function industriesPage() {
 ${C.pageHero({ title: 'Solutions for every industry', intro: 'Insulation, cladding and accessories for the piping, equipment and HVAC systems found across industrial and commercial sectors.', crumbs: [{ name: 'Industries', href: '/industries/' }] })}
 <section class="section"><div class="container">
   <div class="ind-grid">
-    ${industries.map((ind) => `<div class="ind-card" id="${ind.id}"><h3>${ind.name}</h3><p>${ind.description}</p><ul>${ind.products.map((s) => `<li><a href="${bySlug[s].url}">${bySlug[s].name}</a></li>`).join('')}</ul><div class="btn-row" style="margin-top:12px"><button class="btn btn--gold btn--sm" type="button" data-quote="${C.esc(ind.name)} requirement">Request a quote</button></div></div>`).join('')}
+    ${industries.map((ind) => `<div class="ind-card" id="${ind.id}"><h3>${ind.name}</h3><p>${ind.description}</p><ul>${ind.products.map((s) => bySlug[s] ? `<li><a href="${bySlug[s].url}">${bySlug[s].name}</a></li>` : '').join('')}</ul><div class="btn-row" style="margin-top:12px"><button class="btn btn--gold btn--sm" type="button" data-quote="${C.esc(ind.name)} requirement">Request a quote</button></div></div>`).join('')}
   </div>
   <p class="muted" style="margin-top:24px;font-size:14px">Products listed are the material types commonly used in each sector. Contact EIC for product-specific recommendations and available specifications.</p>
 </div></section>
